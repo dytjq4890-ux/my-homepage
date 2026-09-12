@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나의 홈페이지</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #222;
+      background: #fff;
+    }
+
+    header {
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: #f5f7fa;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin: 0 0 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #222;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    .section {
+      padding: 70px 7%;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      padding: 30px;
+      text-align: center;
+      background: #222;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">MY HOME</div>
+
+    <nav>
+      <a href="#home">홈</a>
+      <a href="#about">소개</a>
+      <a href="#contact">문의</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>안녕하세요</h1>
+    <p>나만의 멋진 홈페이지입니다.</p>
+    <a href="#about" class="button">더 알아보기</a>
+  </section>
+
+  <section class="section" id="about">
+    <h2>소개</h2>
+    <p>
+      이곳에 나의 사업, 회사, 가게 또는 서비스를 소개할 수 있습니다.
+    </p>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>문의하기</h2>
+    <p>전화번호나 카카오톡, 이메일 등을 넣을 수 있습니다.</p>
+  </section>
+
+  <footer>
+    © 2026 MY HOME. All rights reserved.
+  </footer>
+
+</body>
+</html>
