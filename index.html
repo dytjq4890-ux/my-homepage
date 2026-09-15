@@ -1,928 +1,1625 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>보험점검센터 | 내 보험 제대로 점검하기</title>
-
-  <meta name="description" content="보험점검센터에서 현재 가입한 보험을 꼼꼼하게 점검해보세요. 보험점검 상담 및 보험점검 신청을 간편하게 이용하실 수 있습니다.">
-  <meta name="keywords" content="보험점검, 보험점검센터, 보험상담, 보험분석, 보험리모델링, 보험가입점검">
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, "Noto Sans KR", sans-serif;
-      line-height: 1.6;
-      color: #222;
-      background: #f8fafc;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    /* HEADER */
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #eee;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .header-inner {
-      height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: 800;
-      color: #173b72;
-    }
-
-    nav {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-    }
-
-    nav a {
-      font-size: 15px;
-      font-weight: 600;
-      color: #333;
-    }
-
-    nav a:hover {
-      color: #1d5fd1;
-    }
-
-    .header-phone {
-      background: #173b72;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 8px;
-      font-weight: 700;
-    }
-
-    /* HERO */
-    .hero {
-      background: linear-gradient(135deg, #eef5ff, #ffffff);
-      padding: 90px 0;
-    }
-
-    .hero-content {
-      max-width: 760px;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: #dceaff;
-      color: #1d5fd1;
-      padding: 7px 14px;
-      border-radius: 30px;
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      line-height: 1.25;
-      margin-bottom: 20px;
-      color: #102a52;
-    }
-
-    .hero h1 span {
-      color: #1d5fd1;
-    }
-
-    .hero p {
-      font-size: 19px;
-      color: #555;
-      margin-bottom: 30px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 9px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: #173b72;
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #0f2c58;
-    }
-
-    .btn-secondary {
-      background: white;
-      border: 1px solid #ccd6e5;
-      color: #173b72;
-    }
-
-    /* SECTION */
-    section {
-      padding: 80px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title h2 {
-      font-size: 34px;
-      color: #142f58;
-      margin-bottom: 10px;
-    }
-
-    .section-title p {
-      color: #666;
-    }
-
-    /* CARDS */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 8px 25px rgba(20, 47, 88, 0.07);
-      border: 1px solid #edf1f7;
-    }
-
-    .card-icon {
-      font-size: 35px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-      color: #173b72;
-    }
-
-    .card p {
-      color: #666;
-    }
-
-    /* PROBLEM */
-    .problem-section {
-      background: #f1f6fc;
-    }
-
-    /* SERVICE */
-    .service-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .service {
-      background: white;
-      padding: 25px;
-      border-radius: 14px;
-      border: 1px solid #e8edf5;
-    }
-
-    .service h3 {
-      color: #173b72;
-      margin-bottom: 8px;
-    }
-
-    /* FORM */
-    .apply-section {
-      background: #ffffff;
-    }
-
-    .form-box {
-      max-width: 700px;
-      margin: 0 auto;
-      background: #f8fafc;
-      padding: 40px;
-      border-radius: 18px;
-      border: 1px solid #e3e9f2;
-      box-shadow: 0 10px 35px rgba(20, 47, 88, 0.08);
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 700;
-      color: #263a58;
-    }
-
-    .form-group input,
-    .form-group select {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #ccd5e2;
-      border-radius: 8px;
-      background: white;
-      font-size: 15px;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus {
-      outline: none;
-      border-color: #1d5fd1;
-    }
-
-    .form-agree {
-      margin: 20px 0;
-      font-size: 14px;
-      color: #555;
-    }
-
-    .form-agree input {
-      margin-right: 7px;
-    }
-
-    .submit-btn {
-      width: 100%;
-      padding: 16px;
-      border: none;
-      border-radius: 9px;
-      background: #173b72;
-      color: white;
-      font-size: 17px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .submit-btn:hover {
-      background: #0f2c58;
-    }
-
-    .form-notice {
-      margin-top: 15px;
-      font-size: 13px;
-      color: #777;
-      text-align: center;
-    }
-
-    /* PROCESS */
-    .process {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-    }
-
-    .process-item {
-      background: white;
-      border-radius: 14px;
-      padding: 25px 15px;
-      text-align: center;
-      border: 1px solid #e6ebf2;
-    }
-
-    .process-number {
-      width: 42px;
-      height: 42px;
-      line-height: 42px;
-      margin: 0 auto 12px;
-      border-radius: 50%;
-      background: #173b72;
-      color: white;
-      font-weight: 700;
-    }
-
-    .process-item h3 {
-      font-size: 17px;
-      margin-bottom: 5px;
-      color: #173b72;
-    }
-
-    .process-item p {
-      font-size: 14px;
-      color: #666;
-    }
-
-    /* CTA */
-    .cta {
-      background: #173b72;
-      color: white;
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: 34px;
-      margin-bottom: 15px;
-    }
-
-    .cta p {
-      margin-bottom: 25px;
-      opacity: 0.9;
-    }
-
-    .cta .btn {
-      background: white;
-      color: #173b72;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #111827;
-      color: #cbd5e1;
-      padding: 35px 0;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-logo {
-      color: white;
-      font-weight: 800;
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-
-    .footer-info {
-      font-size: 14px;
-    }
-
-    /* KAKAO */
-    .kakao-button {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 2000;
-      background: #fee500;
-      color: #111;
-      padding: 14px 18px;
-      border-radius: 50px;
-      font-weight: 800;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    }
-
-    .kakao-button:hover {
-      transform: translateY(-2px);
-    }
-
-    /* MOBILE */
-    @media (max-width: 768px) {
-
-      .header-inner {
-        height: auto;
-        padding: 15px 0;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      nav {
-        width: 100%;
-        justify-content: center;
-        gap: 15px;
-        order: 3;
-      }
-
-      nav a {
-        font-size: 13px;
-      }
-
-      .header-phone {
-        padding: 8px 12px;
-        font-size: 13px;
-      }
-
-      .hero {
-        padding: 65px 0;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      section {
-        padding: 60px 0;
-      }
-
-      .section-title h2 {
-        font-size: 28px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .service-list {
-        grid-template-columns: 1fr;
-      }
-
-      .process {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .form-box {
-        padding: 25px 20px;
-      }
-
-      .kakao-button {
-        right: 15px;
-        bottom: 15px;
-        font-size: 14px;
-      }
-    }
-  </style>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>보험점검센터 | 내 보험 제대로 점검하기</title>
+
+<meta
+  name="description"
+  content="보험점검센터에서 가입한 보험의 보장내용과 보험료, 중복보장 및 부족한 보장을 확인해보세요."
+>
+
+<meta
+  name="keywords"
+  content="보험점검, 보험점검센터, 보험상담, 보험분석, 보험료점검"
+>
+
+
+<style>
+
+/* =========================
+   기본 설정
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, "Noto Sans KR", sans-serif;
+  color: #172033;
+  background: #ffffff;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.96);
+  border-bottom: 1px solid #e8ebf0;
+}
+
+.header-inner {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 800;
+  color: #1455d9;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #1455d9;
+}
+
+.phone-top {
+  padding: 10px 17px;
+  border-radius: 10px;
+  background: #1455d9;
+  color: white;
+  font-weight: 700;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  background: linear-gradient(135deg, #f3f7ff, #ffffff);
+  padding: 105px 0 100px;
+}
+
+.hero-label {
+  display: inline-block;
+  padding: 8px 13px;
+  border-radius: 30px;
+  background: #e8f0ff;
+  color: #1455d9;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(38px, 6vw, 64px);
+  line-height: 1.18;
+  letter-spacing: -2px;
+}
+
+.hero h1 span {
+  color: #1455d9;
+}
+
+.hero p {
+  margin: 25px 0 32px;
+  font-size: 19px;
+  color: #5d6675;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 25px;
+  border-radius: 11px;
+  background: #1455d9;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-light {
+  background: white;
+  color: #1455d9;
+  border: 1px solid #d8e1f2;
+  margin-left: 8px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+  padding: 90px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-title h2 {
+  margin: 0 0 12px;
+  font-size: 36px;
+  letter-spacing: -1px;
+}
+
+.section-title p {
+  margin: 0;
+  color: #697386;
+}
+
+
+/* =========================
+   CHECK
+========================= */
+
+.check-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.check-card {
+  padding: 28px 22px;
+  border: 1px solid #e3e7ee;
+  border-radius: 16px;
+  background: white;
+}
+
+.check-number {
+  font-size: 14px;
+  font-weight: 800;
+  color: #1455d9;
+  margin-bottom: 15px;
+}
+
+.check-card h3 {
+  margin: 0 0 10px;
+  font-size: 19px;
+}
+
+.check-card p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+
+/* =========================
+   PROBLEM
+========================= */
+
+.problem {
+  background: #f7f9fc;
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.problem-card {
+  background: white;
+  border-radius: 17px;
+  padding: 30px;
+  border: 1px solid #e6eaf0;
+}
+
+.problem-card .icon {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.problem-card h3 {
+  margin: 0 0 10px;
+}
+
+.problem-card p {
+  margin: 0;
+  color: #697386;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.service {
+  padding: 27px;
+  border-radius: 15px;
+  background: #f7f9fc;
+}
+
+.service h3 {
+  margin: 0 0 8px;
+}
+
+.service p {
+  margin: 0;
+  color: #697386;
+  font-size: 14px;
+}
+
+
+/* =========================
+   보험점검 신청서
+========================= */
+
+.application {
+  background: #f7f9fc;
+}
+
+.application-box {
+  max-width: 720px;
+  margin: 0 auto;
+  background: white;
+  padding: 45px;
+  border-radius: 24px;
+  border: 1px solid #e3e7ee;
+  box-shadow: 0 12px 35px rgba(20, 40, 80, 0.08);
+}
+
+.application-box h3 {
+  margin: 0 0 8px;
+  font-size: 25px;
+}
+
+.application-box .description {
+  margin: 0 0 30px;
+  color: #697386;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid #dce1e8;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #1455d9;
+  box-shadow: 0 0 0 3px rgba(20, 85, 217, 0.08);
+}
+
+
+/* =========================
+   성별
+========================= */
+
+.gender-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.gender-option {
+  position: relative;
+}
+
+.gender-option input {
+  position: absolute;
+  opacity: 0;
+}
+
+.gender-option label {
+  display: block;
+  padding: 13px;
+  text-align: center;
+  border: 1px solid #dce1e8;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #596273;
+}
+
+.gender-option input:checked + label {
+  border-color: #1455d9;
+  background: #eef4ff;
+  color: #1455d9;
+}
+
+
+/* =========================
+   개인정보 동의
+========================= */
+
+.agree-box {
+  margin: 25px 0;
+  padding: 16px;
+  border-radius: 10px;
+  background: #f7f9fc;
+  font-size: 13px;
+  color: #697386;
+}
+
+.agree-box label {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.agree-box input {
+  margin-top: 4px;
+}
+
+
+/* =========================
+   신청 버튼
+========================= */
+
+.submit-btn {
+  width: 100%;
+  padding: 17px;
+  border: none;
+  border-radius: 11px;
+  background: #1455d9;
+  color: white;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+}
+
+
+/* =========================
+   PROCESS
+========================= */
+
+.process {
+  background: #ffffff;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.process-card {
+  text-align: center;
+  background: #f7f9fc;
+  padding: 28px 18px;
+  border-radius: 16px;
+  border: 1px solid #e4e8ef;
+}
+
+.step {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #1455d9;
+  color: white;
+  font-weight: 800;
+}
+
+.process-card h3 {
+  margin: 0 0 7px;
+}
+
+.process-card p {
+  margin: 0;
+  color: #697386;
+  font-size: 14px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+  padding: 80px 0;
+}
+
+.cta-box {
+  padding: 60px 30px;
+  border-radius: 24px;
+  text-align: center;
+  background: #1455d9;
+  color: white;
+}
+
+.cta-box h2 {
+  margin: 0 0 12px;
+  font-size: 36px;
+}
+
+.cta-box p {
+  margin: 0 0 28px;
+  opacity: 0.9;
+}
+
+.cta-phone {
+  display: inline-block;
+  padding: 16px 27px;
+  border-radius: 11px;
+  background: white;
+  color: #1455d9;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  padding: 35px 0;
+  background: #111827;
+  color: #c8ced8;
+}
+
+.footer-logo {
+  color: white;
+  font-weight: 800;
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+footer p {
+  margin: 5px 0;
+  font-size: 13px;
+}
+
+
+/* =========================
+   카카오톡 상담 버튼
+========================= */
+
+.kakao-floating {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 14px 20px;
+
+  background: #FEE500;
+  color: #191919;
+
+  border-radius: 50px;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+
+  transition: 0.2s;
+}
+
+.kakao-floating:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 25px rgba(0,0,0,0.22);
+}
+
+.kakao-icon {
+  font-size: 21px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+  nav {
+    display: none;
+  }
+
+  .header-inner {
+    height: 64px;
+  }
+
+  .phone-top {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .hero {
+    padding: 75px 0;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p {
+    font-size: 17px;
+  }
+
+  .btn {
+    display: block;
+    text-align: center;
+    margin: 8px 0;
+  }
+
+  .btn-light {
+    margin-left: 0;
+  }
+
+  section {
+    padding: 70px 0;
+  }
+
+  .section-title h2 {
+    font-size: 30px;
+  }
+
+  .check-grid,
+  .problem-grid,
+  .service-grid,
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .application-box {
+    padding: 30px 20px;
+  }
+
+  .cta-box {
+    padding: 45px 20px;
+  }
+
+  .cta-box h2 {
+    font-size: 29px;
+  }
+
+  .kakao-floating {
+    right: 15px;
+    bottom: 15px;
+    padding: 13px 17px;
+    font-size: 14px;
+  }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="container header-inner">
 
-      <div class="logo">
-        보험점검센터
-      </div>
+<!-- =========================
+     HEADER
+========================= -->
 
-      <nav>
-        <a href="#check">보험점검</a>
-        <a href="#service">서비스</a>
-        <a href="#apply">신청하기</a>
-        <a href="#process">진행과정</a>
-      </nav>
+<header>
 
-      <a class="header-phone" href="tel:010-8646-2117">
-        010-8646-2117
+  <div class="container header-inner">
+
+    <a href="#" class="logo">
+      보험점검센터
+    </a>
+
+
+    <nav>
+
+      <a href="#check">
+        보험점검
       </a>
 
+      <a href="#service">
+        서비스
+      </a>
+
+      <a href="#apply">
+        점검 신청
+      </a>
+
+      <a href="#process">
+        진행과정
+      </a>
+
+      <a href="#contact">
+        상담문의
+      </a>
+
+    </nav>
+
+
+    <a
+      class="phone-top"
+      href="tel:01086462117"
+    >
+      상담전화
+    </a>
+
+  </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="hero-label">
+      보험 전문가와 함께하는 보험 점검
     </div>
-  </header>
 
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
+    <h1>
 
-      <div class="hero-content">
+      내 보험,<br>
 
-        <div class="hero-badge">
-          보험점검 전문 상담
+      <span>
+        제대로 준비되어
+      </span>
+      있을까요?
+
+    </h1>
+
+
+    <p>
+
+      가입한 보험의 보장내용과 보험료를 확인하고<br>
+
+      나에게 필요한 보장이 잘 준비되어 있는지
+      점검해보세요.
+
+    </p>
+
+
+    <a
+      class="btn"
+      href="#apply"
+    >
+      무료 보험점검 신청
+    </a>
+
+
+    <a
+      class="btn btn-light"
+      href="#check"
+    >
+      보험 점검 알아보기
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     보험점검
+========================= -->
+
+<section id="check">
+
+  <div class="container">
+
+
+    <div class="section-title">
+
+      <h2>
+        보험, 이런 부분을 확인해보세요
+      </h2>
+
+      <p>
+        현재 가입한 보험을 객관적으로 살펴보는 것부터 시작합니다.
+      </p>
+
+    </div>
+
+
+    <div class="check-grid">
+
+
+      <div class="check-card">
+
+        <div class="check-number">
+          CHECK 01
         </div>
 
-        <h1>
-          내 보험,<br>
-          <span>제대로 가입되어 있는지</span><br>
-          점검해보세요.
-        </h1>
+        <h3>
+          보험료가 적정한지
+        </h3>
 
         <p>
-          현재 가입한 보험을 꼼꼼하게 확인하고
-          부족한 보장은 없는지, 불필요한 보장은 없는지
-          보험점검센터에서 함께 살펴드립니다.
+          현재 납입하고 있는 보험료와
+          가입 내용을 함께 확인합니다.
         </p>
 
-        <div class="hero-buttons">
-          <a href="#apply" class="btn btn-primary">
-            보험점검 신청하기
-          </a>
-
-          <a href="https://open.kakao.com/o/sUxshkKi"
-             target="_blank"
-             class="btn btn-secondary">
-            카카오톡 상담
-          </a>
-        </div>
-
       </div>
 
-    </div>
-  </section>
 
 
-  <!-- CHECK -->
-  <section id="check">
-    <div class="container">
+      <div class="check-card">
 
-      <div class="section-title">
-        <h2>보험점검이 필요한 이유</h2>
-        <p>가입 후 오랫동안 확인하지 않았다면 지금 점검해보세요.</p>
-      </div>
-
-      <div class="cards">
-
-        <div class="card">
-          <div class="card-icon">🔍</div>
-          <h3>보장내용 확인</h3>
-          <p>
-            현재 가입한 보험의 보장내용과
-            실제 필요한 보장이 제대로 구성되어 있는지 확인합니다.
-          </p>
+        <div class="check-number">
+          CHECK 02
         </div>
 
-        <div class="card">
-          <div class="card-icon">📋</div>
-          <h3>보험료 점검</h3>
-          <p>
-            매월 납입하고 있는 보험료가
-            현재 보장에 비해 적절한지 살펴봅니다.
-          </p>
-        </div>
+        <h3>
+          보장이 중복되는지
+        </h3>
 
-        <div class="card">
-          <div class="card-icon">🛡️</div>
-          <h3>보장 공백 확인</h3>
-          <p>
-            혹시 모를 질병이나 사고에 대비해
-            부족한 보장 부분이 있는지 확인합니다.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- PROBLEM -->
-  <section class="problem-section">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>이런 분들에게 추천합니다</h2>
-        <p>보험이 많지만 무엇이 필요한지 모르겠다면 점검이 필요합니다.</p>
-      </div>
-
-      <div class="cards">
-
-        <div class="card">
-          <div class="card-icon">🤔</div>
-          <h3>내 보험을 잘 모르겠어요</h3>
-          <p>
-            가입한 보험은 많은데 어떤 보장을 받고 있는지
-            정확하게 모르시는 분
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">💰</div>
-          <h3>보험료가 부담돼요</h3>
-          <p>
-            매월 납입하는 보험료가 너무 많다고 느끼시는 분
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">⚠️</div>
-          <h3>보장이 부족할까 걱정돼요</h3>
-          <p>
-            실제 필요한 보장이 빠져 있는지 확인하고 싶은 분
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- SERVICE -->
-  <section id="service">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>보험점검센터 서비스</h2>
-        <p>현재 가입한 보험을 기준으로 꼼꼼하게 확인합니다.</p>
-      </div>
-
-      <div class="service-list">
-
-        <div class="service">
-          <h3>01. 가입 보험 분석</h3>
-          <p>
-            현재 가입되어 있는 보험의 주요 보장내용과
-            보험료를 확인합니다.
-          </p>
-        </div>
-
-        <div class="service">
-          <h3>02. 보장내용 점검</h3>
-          <p>
-            필요한 보장이 충분한지,
-            부족한 부분은 없는지 확인합니다.
-          </p>
-        </div>
-
-        <div class="service">
-          <h3>03. 불필요한 보장 확인</h3>
-          <p>
-            현재 상황에 비해 과도하거나 중복된 보장이
-            있는지 살펴봅니다.
-          </p>
-        </div>
-
-        <div class="service">
-          <h3>04. 맞춤 상담</h3>
-          <p>
-            개인의 상황에 맞춰 보험에 대해
-            이해하기 쉽게 상담해드립니다.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- APPLY FORM -->
-  <section id="apply" class="apply-section">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>보험점검 신청</h2>
         <p>
-          아래 내용을 남겨주시면 확인 후 상담을 안내해드립니다.
+          여러 보험에 비슷한 보장이
+          반복되어 있는지 살펴봅니다.
         </p>
+
       </div>
 
-      <div class="form-box">
 
-        <!-- FORMspree 실제 접수 -->
-        <form
-          action="https://formspree.io/f/mjyvnlqp"
-          method="POST"
+
+      <div class="check-card">
+
+        <div class="check-number">
+          CHECK 03
+        </div>
+
+        <h3>
+          부족한 보장은 없는지
+        </h3>
+
+        <p>
+          현재 가입 내용에서 필요한 보장이
+          부족하지 않은지 확인합니다.
+        </p>
+
+      </div>
+
+
+
+      <div class="check-card">
+
+        <div class="check-number">
+          CHECK 04
+        </div>
+
+        <h3>
+          보장내용을 알고 있는지
+        </h3>
+
+        <p>
+          가입한 보험의 주요 보장과 조건을
+          쉽게 확인할 수 있도록 안내합니다.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     이런 분께 추천
+========================= -->
+
+<section class="problem">
+
+  <div class="container">
+
+
+    <div class="section-title">
+
+      <h2>
+        이런 분께 보험점검을 권해드립니다
+      </h2>
+
+      <p>
+        보험은 가입하는 것만큼
+        현재 상태를 확인하는 것도 중요합니다.
+      </p>
+
+    </div>
+
+
+    <div class="problem-grid">
+
+
+      <div class="problem-card">
+
+        <div class="icon">
+          📋
+        </div>
+
+        <h3>
+          가입한 보험이 너무 많아요
+        </h3>
+
+        <p>
+          여러 보험에 가입했지만 각각 어떤 보장이
+          있는지 잘 모르겠다면 확인해보세요.
+        </p>
+
+      </div>
+
+
+
+      <div class="problem-card">
+
+        <div class="icon">
+          🔎
+        </div>
+
+        <h3>
+          내 보장이 충분한지 궁금해요
+        </h3>
+
+        <p>
+          현재 보험에서 필요한 보장이
+          잘 준비되어 있는지 점검해보세요.
+        </p>
+
+      </div>
+
+
+
+      <div class="problem-card">
+
+        <div class="icon">
+          💬
+        </div>
+
+        <h3>
+          보험을 쉽게 설명받고 싶어요
+        </h3>
+
+        <p>
+          어려운 보험 내용을 이해하기 쉽게
+          안내받고 현재 가입 내용을 확인해보세요.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     서비스
+========================= -->
+
+<section id="service">
+
+  <div class="container">
+
+
+    <div class="section-title">
+
+      <h2>
+        보험점검 서비스
+      </h2>
+
+      <p>
+        현재 가입한 보험을 기준으로
+        필요한 내용을 차근차근 확인합니다.
+      </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+
+      <div class="service">
+
+        <h3>
+          01. 가입 보험 확인
+        </h3>
+
+        <p>
+          현재 가입되어 있는 보험과
+          주요 계약 내용을 확인합니다.
+        </p>
+
+      </div>
+
+
+
+      <div class="service">
+
+        <h3>
+          02. 보장내용 분석
+        </h3>
+
+        <p>
+          보험별 주요 보장내용을 확인하고
+          이해하기 쉽게 안내합니다.
+        </p>
+
+      </div>
+
+
+
+      <div class="service">
+
+        <h3>
+          03. 중복보장 확인
+        </h3>
+
+        <p>
+          비슷하거나 중복되는 보장이
+          있는지 살펴봅니다.
+        </p>
+
+      </div>
+
+
+
+      <div class="service">
+
+        <h3>
+          04. 부족한 보장 확인
+        </h3>
+
+        <p>
+          현재 보장에서 확인이 필요한 부분을
+          함께 살펴봅니다.
+        </p>
+
+      </div>
+
+
+
+      <div class="service">
+
+        <h3>
+          05. 보험료 점검
+        </h3>
+
+        <p>
+          현재 납입 보험료와
+          가입 내용을 함께 확인합니다.
+        </p>
+
+      </div>
+
+
+
+      <div class="service">
+
+        <h3>
+          06. 맞춤 상담
+        </h3>
+
+        <p>
+          확인된 내용을 바탕으로
+          궁금한 부분을 상담해드립니다.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     보험점검 신청서
+========================= -->
+
+<section
+  id="apply"
+  class="application"
+>
+
+  <div class="container">
+
+
+    <div class="section-title">
+
+      <h2>
+        보험점검 신청
+      </h2>
+
+      <p>
+        간단한 정보를 남겨주시면
+        보험점검 상담을 안내해드립니다.
+      </p>
+
+    </div>
+
+
+    <div class="application-box">
+
+
+      <h3>
+        무료 보험점검 신청서
+      </h3>
+
+
+      <p class="description">
+
+        아래 정보를 입력해주세요.<br>
+
+        상담을 위해 필요한 최소한의 정보만 입력받습니다.
+
+      </p>
+
+
+      <!-- =========================
+           FORMSPREE 신청서
+      ========================= -->
+
+      <form
+        action="https://formspree.io/f/mjyvnlqp"
+        method="POST"
+      >
+
+
+        <!-- 신청 제목 -->
+
+        <input
+          type="hidden"
+          name="subject"
+          value="보험점검센터 보험점검 신청"
         >
 
+
+        <!-- 이름 -->
+
+        <div class="form-group">
+
+          <label for="name">
+            이름
+          </label>
+
           <input
-            type="hidden"
-            name="subject"
-            value="보험점검센터 보험점검 신청"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="이름을 입력해주세요"
+            required
           >
 
-          <!-- 이름 -->
-          <div class="form-group">
-            <label for="name">이름</label>
-
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="이름을 입력해주세요"
-              autocomplete="name"
-              required
-            >
-          </div>
+        </div>
 
 
-          <!-- 연락처 -->
-          <div class="form-group">
-            <label for="phone">연락처</label>
 
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="010-0000-0000"
-              autocomplete="tel"
-              required
-            >
-          </div>
+        <!-- 연락처 -->
 
+        <div class="form-group">
 
-          <!-- 성별 -->
-          <div class="form-group">
-            <label for="gender">성별</label>
+          <label for="phone">
+            연락처
+          </label>
 
-            <select
-              id="gender"
-              name="gender"
-              required
-            >
-              <option value="">선택해주세요</option>
-              <option value="남성">남성</option>
-              <option value="여성">여성</option>
-            </select>
-          </div>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="010-0000-0000"
+            required
+          >
+
+        </div>
 
 
-          <!-- 나이 -->
-          <div class="form-group">
-            <label for="age">나이</label>
 
-            <input
-              type="number"
-              id="age"
-              name="age"
-              placeholder="나이를 입력해주세요"
-              min="1"
-              max="120"
-              required
-            >
-          </div>
+        <!-- 성별 -->
+
+        <div class="form-group">
+
+          <label>
+            성별
+          </label>
 
 
-          <!-- 거주지 -->
-          <div class="form-group">
-            <label for="location">거주지</label>
-
-            <select
-              id="location"
-              name="location"
-              required
-            >
-              <option value="">거주지를 선택해주세요</option>
-              <option value="서울">서울</option>
-              <option value="경기">경기</option>
-              <option value="인천">인천</option>
-              <option value="부산">부산</option>
-              <option value="대구">대구</option>
-              <option value="광주">광주</option>
-              <option value="대전">대전</option>
-              <option value="울산">울산</option>
-              <option value="세종">세종</option>
-              <option value="강원">강원</option>
-              <option value="충북">충북</option>
-              <option value="충남">충남</option>
-              <option value="전북">전북</option>
-              <option value="전남">전남</option>
-              <option value="경북">경북</option>
-              <option value="경남">경남</option>
-              <option value="제주">제주</option>
-            </select>
-          </div>
+          <div class="gender-group">
 
 
-          <!-- 개인정보 동의 -->
-          <div class="form-agree">
+            <div class="gender-option">
 
-            <label>
               <input
-                type="checkbox"
-                name="privacy_agree"
-                value="동의"
+                type="radio"
+                id="male"
+                name="gender"
+                value="남성"
                 required
               >
 
-              개인정보 수집 및 이용에 동의합니다.
-            </label>
+              <label for="male">
+                남성
+              </label>
+
+            </div>
+
+
+
+            <div class="gender-option">
+
+              <input
+                type="radio"
+                id="female"
+                name="gender"
+                value="여성"
+              >
+
+              <label for="female">
+                여성
+              </label>
+
+            </div>
+
 
           </div>
 
+        </div>
 
-          <!-- 신청 버튼 -->
-          <button
-            type="submit"
-            class="submit-btn"
+
+
+        <!-- 나이 -->
+
+        <div class="form-group">
+
+          <label for="age">
+            나이
+          </label>
+
+          <input
+            type="number"
+            id="age"
+            name="age"
+            min="1"
+            max="120"
+            placeholder="나이를 입력해주세요"
+            required
           >
-            보험점검 신청하기
-          </button>
+
+        </div>
 
 
-          <p class="form-notice">
-            신청 내용을 확인한 후 상담을 위해 연락드립니다.
-          </p>
 
-        </form>
+        <!-- 거주지 -->
 
-      </div>
+        <div class="form-group">
+
+          <label for="location">
+            거주지
+          </label>
+
+
+          <select
+            id="location"
+            name="location"
+            required
+          >
+
+            <option value="">
+              거주지를 선택해주세요
+            </option>
+
+            <option value="서울">
+              서울
+            </option>
+
+            <option value="경기">
+              경기
+            </option>
+
+            <option value="인천">
+              인천
+            </option>
+
+            <option value="부산">
+              부산
+            </option>
+
+            <option value="대구">
+              대구
+            </option>
+
+            <option value="광주">
+              광주
+            </option>
+
+            <option value="대전">
+              대전
+            </option>
+
+            <option value="울산">
+              울산
+            </option>
+
+            <option value="세종">
+              세종
+            </option>
+
+            <option value="강원">
+              강원
+            </option>
+
+            <option value="충북">
+              충북
+            </option>
+
+            <option value="충남">
+              충남
+            </option>
+
+            <option value="전북">
+              전북
+            </option>
+
+            <option value="전남">
+              전남
+            </option>
+
+            <option value="경북">
+              경북
+            </option>
+
+            <option value="경남">
+              경남
+            </option>
+
+            <option value="제주">
+              제주
+            </option>
+
+          </select>
+
+        </div>
+
+
+
+        <!-- 개인정보 동의 -->
+
+        <div class="agree-box">
+
+          <label>
+
+            <input
+              type="checkbox"
+              name="privacy_agree"
+              value="동의"
+              required
+            >
+
+            <span>
+
+              보험점검 상담을 위한
+              개인정보 수집 및 이용에 동의합니다.
+              입력하신 정보는 상담 목적으로 사용됩니다.
+
+            </span>
+
+          </label>
+
+        </div>
+
+
+
+        <!-- 신청 버튼 -->
+
+        <button
+          type="submit"
+          class="submit-btn"
+        >
+
+          보험점검 신청하기
+
+        </button>
+
+
+      </form>
 
     </div>
-  </section>
+
+  </div>
+
+</section>
 
 
-  <!-- PROCESS -->
-  <section id="process">
-    <div class="container">
 
-      <div class="section-title">
-        <h2>보험점검 진행과정</h2>
-        <p>간단하게 신청하고 상담받으실 수 있습니다.</p>
-      </div>
+<!-- =========================
+     진행과정
+========================= -->
 
-      <div class="process">
+<section
+  id="process"
+  class="process"
+>
 
-        <div class="process-item">
-          <div class="process-number">1</div>
-          <h3>신청</h3>
-          <p>보험점검 신청서를 작성합니다.</p>
-        </div>
-
-        <div class="process-item">
-          <div class="process-number">2</div>
-          <h3>확인</h3>
-          <p>신청 내용을 확인합니다.</p>
-        </div>
-
-        <div class="process-item">
-          <div class="process-number">3</div>
-          <h3>상담</h3>
-          <p>보험에 대해 상담을 진행합니다.</p>
-        </div>
-
-        <div class="process-item">
-          <div class="process-number">4</div>
-          <h3>보험점검</h3>
-          <p>현재 보험의 보장내용을 함께 확인합니다.</p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
+  <div class="container">
 
 
-  <!-- CTA -->
-  <section class="cta">
-    <div class="container">
+    <div class="section-title">
 
-      <h2>내 보험, 지금 한번 점검해보세요.</h2>
+      <h2>
+        보험점검 진행과정
+      </h2>
 
       <p>
-        간단한 신청으로 보험점검 상담을 받아보실 수 있습니다.
+        복잡하지 않습니다.
+        순서대로 차근차근 진행합니다.
       </p>
 
-      <a href="#apply" class="btn">
-        보험점검 신청하기
+    </div>
+
+
+    <div class="process-grid">
+
+
+      <div class="process-card">
+
+        <div class="step">
+          1
+        </div>
+
+        <h3>
+          상담 신청
+        </h3>
+
+        <p>
+          전화 또는 신청서를 통해
+          상담을 신청합니다.
+        </p>
+
+      </div>
+
+
+
+      <div class="process-card">
+
+        <div class="step">
+          2
+        </div>
+
+        <h3>
+          보험 확인
+        </h3>
+
+        <p>
+          현재 가입한 보험 내용을
+          확인합니다.
+        </p>
+
+      </div>
+
+
+
+      <div class="process-card">
+
+        <div class="step">
+          3
+        </div>
+
+        <h3>
+          보장 점검
+        </h3>
+
+        <p>
+          보장내용과 중복 및 부족한
+          부분을 살펴봅니다.
+        </p>
+
+      </div>
+
+
+
+      <div class="process-card">
+
+        <div class="step">
+          4
+        </div>
+
+        <h3>
+          상담 안내
+        </h3>
+
+        <p>
+          확인된 내용을 바탕으로
+          궁금한 점을 안내합니다.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     상담문의
+========================= -->
+
+<section
+  id="contact"
+  class="cta"
+>
+
+  <div class="container">
+
+
+    <div class="cta-box">
+
+      <h2>
+        내 보험, 한번 점검해보세요.
+      </h2>
+
+      <p>
+
+        지금 가입한 보험이 어떤 상태인지<br>
+
+        편하게 상담받아보세요.
+
+      </p>
+
+
+      <a
+        class="cta-phone"
+        href="tel:01086462117"
+      >
+
+        010-8646-2117
+
       </a>
 
     </div>
-  </section>
+
+  </div>
+
+</section>
 
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container footer-inner">
+</main>
 
-      <div>
-        <div class="footer-logo">
-          보험점검센터
-        </div>
 
-        <div class="footer-info">
-          보험점검 상담센터
-        </div>
-      </div>
 
-      <div class="footer-info">
-        상담문의 :
-        <a href="tel:010-8646-2117">
-          010-8646-2117
-        </a>
-      </div>
+<!-- =========================
+     FOOTER
+========================= -->
 
+<footer>
+
+  <div class="container">
+
+
+    <div class="footer-logo">
+      보험점검센터
     </div>
-  </footer>
 
 
-  <!-- KAKAO TALK -->
-  <a
-    href="https://open.kakao.com/o/sUxshkKi"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="kakao-button"
-  >
-    💬 카카오톡 상담
-  </a>
+    <p>
+      상담전화 : 010-8646-2117
+    </p>
+
+
+    <p>
+
+      본 홈페이지는 보험 관련 일반적인 정보를 제공하며,
+      구체적인 계약 내용은 보험증권 및 보험회사 확인이 필요합니다.
+
+    </p>
+
+
+    <p>
+      © 보험점검센터. All rights reserved.
+    </p>
+
+
+  </div>
+
+</footer>
+
+
+
+<!-- =========================
+     카카오톡 상담 버튼
+========================= -->
+
+<a
+  href="https://open.kakao.com/o/sUxshkKi"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="kakao-floating"
+  aria-label="카카오톡 상담하기"
+>
+
+  <span class="kakao-icon">
+    💬
+  </span>
+
+  <span>
+    카카오톡 상담
+  </span>
+
+</a>
 
 
 </body>
+
 </html>
