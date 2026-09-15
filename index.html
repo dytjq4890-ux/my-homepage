@@ -5,10 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>보험점검센터 | 내 보험 제대로 점검하기</title>
+
 <meta name="description" content="보험점검센터에서 가입한 보험의 보장내용과 보험료, 중복보장 및 부족한 보장을 확인해보세요.">
+
 <meta name="keywords" content="보험점검, 보험점검센터, 보험상담, 보험분석, 보험료점검">
 
 <style>
+
 * {
   box-sizing: border-box;
 }
@@ -79,6 +82,7 @@ nav a:hover {
   font-weight: 700;
 }
 
+
 /* =========================
    HERO
 ========================= */
@@ -137,6 +141,7 @@ nav a:hover {
   margin-left: 8px;
 }
 
+
 /* =========================
    SECTIONS
 ========================= */
@@ -160,6 +165,7 @@ section {
   margin: 0;
   color: #697386;
 }
+
 
 /* =========================
    CHECK
@@ -196,6 +202,7 @@ section {
   font-size: 14px;
 }
 
+
 /* =========================
    PROBLEM
 ========================= */
@@ -231,6 +238,7 @@ section {
   color: #697386;
 }
 
+
 /* =========================
    SERVICES
 ========================= */
@@ -256,6 +264,7 @@ section {
   color: #697386;
   font-size: 14px;
 }
+
 
 /* =========================
    보험점검 신청서
@@ -313,6 +322,7 @@ section {
   box-shadow: 0 0 0 3px rgba(20, 85, 217, 0.08);
 }
 
+
 /* 성별 */
 
 .gender-group {
@@ -347,6 +357,7 @@ section {
   color: #1455d9;
 }
 
+
 /* 개인정보 동의 */
 
 .agree-box {
@@ -369,6 +380,7 @@ section {
   margin-top: 4px;
 }
 
+
 /* 신청 버튼 */
 
 .submit-btn {
@@ -386,6 +398,7 @@ section {
 .submit-btn:hover {
   opacity: 0.9;
 }
+
 
 /* =========================
    PROCESS
@@ -432,6 +445,7 @@ section {
   font-size: 14px;
 }
 
+
 /* =========================
    CTA
 ========================= */
@@ -468,6 +482,7 @@ section {
   font-weight: 800;
 }
 
+
 /* =========================
    FOOTER
 ========================= */
@@ -489,6 +504,46 @@ footer p {
   margin: 5px 0;
   font-size: 13px;
 }
+
+
+/* =========================
+   카카오톡 상담 버튼
+========================= */
+
+.kakao-floating {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 14px 20px;
+
+  background: #FEE500;
+  color: #191919;
+
+  border-radius: 50px;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+
+  transition: 0.2s;
+}
+
+.kakao-floating:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 25px rgba(0,0,0,0.22);
+}
+
+.kakao-icon {
+  font-size: 21px;
+}
+
 
 /* =========================
    MOBILE
@@ -557,17 +612,29 @@ footer p {
   .cta-box h2 {
     font-size: 29px;
   }
+
+  .kakao-floating {
+    right: 15px;
+    bottom: 15px;
+    padding: 13px 17px;
+    font-size: 14px;
+  }
+
 }
+
 </style>
 </head>
 
+
 <body>
+
 
 <!-- =========================
      HEADER
 ========================= -->
 
 <header>
+
   <div class="container header-inner">
 
     <a href="#" class="logo">
@@ -575,22 +642,44 @@ footer p {
     </a>
 
     <nav>
-      <a href="#check">보험점검</a>
-      <a href="#service">서비스</a>
-      <a href="#apply">점검 신청</a>
-      <a href="#process">진행과정</a>
-      <a href="#contact">상담문의</a>
+
+      <a href="#check">
+        보험점검
+      </a>
+
+      <a href="#service">
+        서비스
+      </a>
+
+      <a href="#apply">
+        점검 신청
+      </a>
+
+      <a href="#process">
+        진행과정
+      </a>
+
+      <a href="#contact">
+        상담문의
+      </a>
+
     </nav>
 
-    <a class="phone-top" href="tel:01086462117">
+    <a
+      class="phone-top"
+      href="tel:01086462117"
+    >
       상담전화
     </a>
 
   </div>
+
 </header>
 
 
+
 <main>
+
 
 <!-- =========================
      HERO
@@ -605,26 +694,43 @@ footer p {
     </div>
 
     <h1>
+
       내 보험,<br>
-      <span>제대로 준비되어</span> 있을까요?
+
+      <span>
+        제대로 준비되어
+      </span>
+      있을까요?
+
     </h1>
 
     <p>
+
       가입한 보험의 보장내용과 보험료를 확인하고<br>
-      나에게 필요한 보장이 잘 준비되어 있는지 점검해보세요.
+
+      나에게 필요한 보장이 잘 준비되어 있는지
+      점검해보세요.
+
     </p>
 
-    <a class="btn" href="#apply">
+    <a
+      class="btn"
+      href="#apply"
+    >
       무료 보험점검 신청
     </a>
 
-    <a class="btn btn-light" href="#check">
+    <a
+      class="btn btn-light"
+      href="#check"
+    >
       보험 점검 알아보기
     </a>
 
   </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -650,6 +756,7 @@ footer p {
 
     <div class="check-grid">
 
+
       <div class="check-card">
 
         <div class="check-number">
@@ -661,10 +768,12 @@ footer p {
         </h3>
 
         <p>
-          현재 납입하고 있는 보험료와 가입 내용을 함께 확인합니다.
+          현재 납입하고 있는 보험료와
+          가입 내용을 함께 확인합니다.
         </p>
 
       </div>
+
 
 
       <div class="check-card">
@@ -678,10 +787,12 @@ footer p {
         </h3>
 
         <p>
-          여러 보험에 비슷한 보장이 반복되어 있는지 살펴봅니다.
+          여러 보험에 비슷한 보장이
+          반복되어 있는지 살펴봅니다.
         </p>
 
       </div>
+
 
 
       <div class="check-card">
@@ -695,10 +806,12 @@ footer p {
         </h3>
 
         <p>
-          현재 가입 내용에서 필요한 보장이 부족하지 않은지 확인합니다.
+          현재 가입 내용에서 필요한 보장이
+          부족하지 않은지 확인합니다.
         </p>
 
       </div>
+
 
 
       <div class="check-card">
@@ -712,16 +825,19 @@ footer p {
         </h3>
 
         <p>
-          가입한 보험의 주요 보장과 조건을 쉽게 확인할 수 있도록 안내합니다.
+          가입한 보험의 주요 보장과 조건을
+          쉽게 확인할 수 있도록 안내합니다.
         </p>
 
       </div>
+
 
     </div>
 
   </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -739,13 +855,15 @@ footer p {
       </h2>
 
       <p>
-        보험은 가입하는 것만큼 현재 상태를 확인하는 것도 중요합니다.
+        보험은 가입하는 것만큼
+        현재 상태를 확인하는 것도 중요합니다.
       </p>
 
     </div>
 
 
     <div class="problem-grid">
+
 
       <div class="problem-card">
 
@@ -758,11 +876,12 @@ footer p {
         </h3>
 
         <p>
-          여러 보험에 가입했지만 각각 어떤 보장이 있는지
-          잘 모르겠다면 확인해보세요.
+          여러 보험에 가입했지만 각각 어떤 보장이
+          있는지 잘 모르겠다면 확인해보세요.
         </p>
 
       </div>
+
 
 
       <div class="problem-card">
@@ -776,11 +895,12 @@ footer p {
         </h3>
 
         <p>
-          현재 보험에서 필요한 보장이 잘 준비되어 있는지
-          점검해보세요.
+          현재 보험에서 필요한 보장이
+          잘 준비되어 있는지 점검해보세요.
         </p>
 
       </div>
+
 
 
       <div class="problem-card">
@@ -794,17 +914,19 @@ footer p {
         </h3>
 
         <p>
-          어려운 보험 내용을 이해하기 쉽게 안내받고
-          현재 가입 내용을 확인해보세요.
+          어려운 보험 내용을 이해하기 쉽게
+          안내받고 현재 가입 내용을 확인해보세요.
         </p>
 
       </div>
+
 
     </div>
 
   </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -822,7 +944,8 @@ footer p {
       </h2>
 
       <p>
-        현재 가입한 보험을 기준으로 필요한 내용을 차근차근 확인합니다.
+        현재 가입한 보험을 기준으로
+        필요한 내용을 차근차근 확인합니다.
       </p>
 
     </div>
@@ -830,52 +953,95 @@ footer p {
 
     <div class="service-grid">
 
+
       <div class="service">
-        <h3>01. 가입 보험 확인</h3>
+
+        <h3>
+          01. 가입 보험 확인
+        </h3>
+
         <p>
-          현재 가입되어 있는 보험과 주요 계약 내용을 확인합니다.
+          현재 가입되어 있는 보험과
+          주요 계약 내용을 확인합니다.
         </p>
+
       </div>
 
 
+
       <div class="service">
-        <h3>02. 보장내용 분석</h3>
+
+        <h3>
+          02. 보장내용 분석
+        </h3>
+
         <p>
-          보험별 주요 보장내용을 확인하고 이해하기 쉽게 안내합니다.
+          보험별 주요 보장내용을 확인하고
+          이해하기 쉽게 안내합니다.
         </p>
+
       </div>
 
 
+
       <div class="service">
-        <h3>03. 중복보장 확인</h3>
+
+        <h3>
+          03. 중복보장 확인
+        </h3>
+
         <p>
-          비슷하거나 중복되는 보장이 있는지 살펴봅니다.
+          비슷하거나 중복되는 보장이
+          있는지 살펴봅니다.
         </p>
+
       </div>
 
 
+
       <div class="service">
-        <h3>04. 부족한 보장 확인</h3>
+
+        <h3>
+          04. 부족한 보장 확인
+        </h3>
+
         <p>
-          현재 보장에서 확인이 필요한 부분을 함께 살펴봅니다.
+          현재 보장에서 확인이 필요한 부분을
+          함께 살펴봅니다.
         </p>
+
       </div>
 
 
+
       <div class="service">
-        <h3>05. 보험료 점검</h3>
+
+        <h3>
+          05. 보험료 점검
+        </h3>
+
         <p>
-          현재 납입 보험료와 가입 내용을 함께 확인합니다.
+          현재 납입 보험료와
+          가입 내용을 함께 확인합니다.
         </p>
+
       </div>
 
 
+
       <div class="service">
-        <h3>06. 맞춤 상담</h3>
+
+        <h3>
+          06. 맞춤 상담
+        </h3>
+
         <p>
-          확인된 내용을 바탕으로 궁금한 부분을 상담해드립니다.
+          확인된 내용을 바탕으로
+          궁금한 부분을 상담해드립니다.
         </p>
+
       </div>
+
 
     </div>
 
@@ -884,11 +1050,15 @@ footer p {
 </section>
 
 
+
 <!-- =========================
      보험점검 신청서
 ========================= -->
 
-<section id="apply" class="application">
+<section
+  id="apply"
+  class="application"
+>
 
   <div class="container">
 
@@ -899,7 +1069,8 @@ footer p {
       </h2>
 
       <p>
-        간단한 정보를 남겨주시면 보험점검 상담을 안내해드립니다.
+        간단한 정보를 남겨주시면
+        보험점검 상담을 안내해드립니다.
       </p>
 
     </div>
@@ -912,12 +1083,18 @@ footer p {
       </h3>
 
       <p class="description">
+
         아래 정보를 입력해주세요.<br>
+
         상담을 위해 필요한 최소한의 정보만 입력받습니다.
+
       </p>
 
 
-      <form onsubmit="return showApplyMessage();">
+      <form
+        onsubmit="return showApplyMessage();"
+      >
+
 
         <!-- 이름 -->
 
@@ -936,6 +1113,7 @@ footer p {
           >
 
         </div>
+
 
 
         <!-- 연락처 -->
@@ -957,6 +1135,7 @@ footer p {
         </div>
 
 
+
         <!-- 성별 -->
 
         <div class="form-group">
@@ -966,6 +1145,7 @@ footer p {
           </label>
 
           <div class="gender-group">
+
 
             <div class="gender-option">
 
@@ -984,6 +1164,7 @@ footer p {
             </div>
 
 
+
             <div class="gender-option">
 
               <input
@@ -999,9 +1180,11 @@ footer p {
 
             </div>
 
+
           </div>
 
         </div>
+
 
 
         <!-- 나이 -->
@@ -1023,6 +1206,7 @@ footer p {
           >
 
         </div>
+
 
 
         <!-- 거주지 -->
@@ -1116,6 +1300,7 @@ footer p {
         </div>
 
 
+
         <!-- 개인정보 동의 -->
 
         <div class="agree-box">
@@ -1128,13 +1313,17 @@ footer p {
             >
 
             <span>
-              보험점검 상담을 위한 개인정보 수집 및 이용에 동의합니다.
+
+              보험점검 상담을 위한
+              개인정보 수집 및 이용에 동의합니다.
               입력하신 정보는 상담 목적으로 사용됩니다.
+
             </span>
 
           </label>
 
         </div>
+
 
 
         <!-- 신청 버튼 -->
@@ -1146,6 +1335,7 @@ footer p {
           보험점검 신청하기
         </button>
 
+
       </form>
 
     </div>
@@ -1155,11 +1345,15 @@ footer p {
 </section>
 
 
+
 <!-- =========================
      진행과정
 ========================= -->
 
-<section id="process" class="process">
+<section
+  id="process"
+  class="process"
+>
 
   <div class="container">
 
@@ -1170,13 +1364,15 @@ footer p {
       </h2>
 
       <p>
-        복잡하지 않습니다. 순서대로 차근차근 진행합니다.
+        복잡하지 않습니다.
+        순서대로 차근차근 진행합니다.
       </p>
 
     </div>
 
 
     <div class="process-grid">
+
 
       <div class="process-card">
 
@@ -1189,10 +1385,12 @@ footer p {
         </h3>
 
         <p>
-          전화 또는 신청서를 통해 상담을 신청합니다.
+          전화 또는 신청서를 통해
+          상담을 신청합니다.
         </p>
 
       </div>
+
 
 
       <div class="process-card">
@@ -1206,10 +1404,12 @@ footer p {
         </h3>
 
         <p>
-          현재 가입한 보험 내용을 확인합니다.
+          현재 가입한 보험 내용을
+          확인합니다.
         </p>
 
       </div>
+
 
 
       <div class="process-card">
@@ -1223,10 +1423,12 @@ footer p {
         </h3>
 
         <p>
-          보장내용과 중복 및 부족한 부분을 살펴봅니다.
+          보장내용과 중복 및 부족한
+          부분을 살펴봅니다.
         </p>
 
       </div>
+
 
 
       <div class="process-card">
@@ -1240,10 +1442,12 @@ footer p {
         </h3>
 
         <p>
-          확인된 내용을 바탕으로 궁금한 점을 안내합니다.
+          확인된 내용을 바탕으로
+          궁금한 점을 안내합니다.
         </p>
 
       </div>
+
 
     </div>
 
@@ -1252,11 +1456,15 @@ footer p {
 </section>
 
 
+
 <!-- =========================
      상담문의
 ========================= -->
 
-<section id="contact" class="cta">
+<section
+  id="contact"
+  class="cta"
+>
 
   <div class="container">
 
@@ -1267,9 +1475,13 @@ footer p {
       </h2>
 
       <p>
+
         지금 가입한 보험이 어떤 상태인지<br>
+
         편하게 상담받아보세요.
+
       </p>
+
 
       <a
         class="cta-phone"
@@ -1284,7 +1496,9 @@ footer p {
 
 </section>
 
+
 </main>
+
 
 
 <!-- =========================
@@ -1304,8 +1518,10 @@ footer p {
     </p>
 
     <p>
+
       본 홈페이지는 보험 관련 일반적인 정보를 제공하며,
       구체적인 계약 내용은 보험증권 및 보험회사 확인이 필요합니다.
+
     </p>
 
     <p>
@@ -1315,6 +1531,31 @@ footer p {
   </div>
 
 </footer>
+
+
+
+<!-- =========================
+     카카오톡 상담 버튼
+========================= -->
+
+<a
+  href="https://open.kakao.com/o/sUxshkKi"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="kakao-floating"
+  aria-label="카카오톡 상담하기"
+>
+
+  <span class="kakao-icon">
+    💬
+  </span>
+
+  <span>
+    카카오톡 상담
+  </span>
+
+</a>
+
 
 
 <!-- =========================
