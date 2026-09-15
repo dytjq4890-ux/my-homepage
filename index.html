@@ -19,12 +19,11 @@
   content="보험점검, 보험점검센터, 보험상담, 보험분석, 보험료점검"
 >
 
-
 <style>
 
-/* =========================
-   기본 설정
-========================= */
+/* ==================================================
+   RESET
+================================================== */
 
 * {
   box-sizing: border-box;
@@ -36,10 +35,14 @@ html {
 
 body {
   margin: 0;
-  font-family: Arial, "Noto Sans KR", sans-serif;
+  font-family:
+    "Noto Sans KR",
+    "Apple SD Gothic Neo",
+    Arial,
+    sans-serif;
   color: #172033;
   background: #ffffff;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 a {
@@ -47,305 +50,706 @@ a {
   color: inherit;
 }
 
+button,
+input,
+select {
+  font-family: inherit;
+}
+
 .container {
-  width: min(1120px, 92%);
+  width: min(1160px, 92%);
   margin: 0 auto;
 }
 
 
-/* =========================
+/* ==================================================
    HEADER
-========================= */
+================================================== */
 
 header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
+
   background: rgba(255,255,255,0.96);
-  border-bottom: 1px solid #e8ebf0;
+
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid #e7ebf2;
 }
 
 .header-inner {
-  height: 72px;
+  min-height: 76px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  gap: 30px;
 }
 
 .logo {
-  font-size: 23px;
-  font-weight: 800;
-  color: #1455d9;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 22px;
+  font-weight: 900;
+
+  color: #0b2d5c;
+
+  letter-spacing: -1px;
+}
+
+.logo-mark {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #0b3b78;
+
+  color: white;
+
+  font-size: 18px;
+  font-weight: 900;
 }
 
 nav {
   display: flex;
-  gap: 28px;
-  font-size: 15px;
-  font-weight: 600;
+  align-items: center;
+
+  gap: 30px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #455166;
+}
+
+nav a {
+  transition: 0.2s;
 }
 
 nav a:hover {
-  color: #1455d9;
+  color: #1260c9;
 }
 
 .phone-top {
-  padding: 10px 17px;
-  border-radius: 10px;
-  background: #1455d9;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 17px;
+
+  border-radius: 8px;
+
+  background: #0b3b78;
+
   color: white;
-  font-weight: 700;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  box-shadow: 0 5px 15px rgba(11,59,120,0.18);
 }
 
 
-/* =========================
+/* ==================================================
    HERO
-========================= */
+================================================== */
 
 .hero {
-  background: linear-gradient(135deg, #f3f7ff, #ffffff);
-  padding: 105px 0 100px;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #071d3a 0%,
+      #0b3b78 58%,
+      #1260c9 100%
+    );
+
+  padding: 105px 0 115px;
+
+  color: white;
+}
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  right: -180px;
+  top: -180px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.05);
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  right: 140px;
+  bottom: -180px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 780px;
 }
 
 .hero-label {
-  display: inline-block;
-  padding: 8px 13px;
-  border-radius: 30px;
-  background: #e8f0ff;
-  color: #1455d9;
-  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+
+  padding: 8px 14px;
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  border-radius: 50px;
+
+  background: rgba(255,255,255,0.08);
+
+  color: #dbeaff;
+
+  font-size: 13px;
   font-weight: 700;
-  margin-bottom: 20px;
+
+  margin-bottom: 24px;
 }
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(38px, 6vw, 64px);
-  line-height: 1.18;
-  letter-spacing: -2px;
+
+  font-size: clamp(40px, 6vw, 66px);
+
+  line-height: 1.16;
+
+  letter-spacing: -3px;
+
+  font-weight: 900;
 }
 
 .hero h1 span {
-  color: #1455d9;
+  color: #7fc0ff;
 }
 
 .hero p {
-  margin: 25px 0 32px;
-  font-size: 19px;
-  color: #5d6675;
+  margin: 28px 0 35px;
+
+  font-size: 18px;
+
+  color: #dce7f7;
+
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .btn {
-  display: inline-block;
-  padding: 15px 25px;
-  border-radius: 11px;
-  background: #1455d9;
-  color: white;
-  font-weight: 700;
-  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+
+  padding: 0 24px;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #0b3b78;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  transition: 0.2s;
 }
 
 .btn:hover {
-  opacity: 0.9;
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.15);
 }
 
 .btn-light {
-  background: white;
-  color: #1455d9;
-  border: 1px solid #d8e1f2;
-  margin-left: 8px;
+  background: rgba(255,255,255,0.09);
+
+  color: white;
+
+  border: 1px solid rgba(255,255,255,0.28);
 }
 
 
-/* =========================
-   SECTIONS
-========================= */
+/* ==================================================
+   TRUST BAR
+================================================== */
+
+.trust-bar {
+  background: #ffffff;
+
+  border-bottom: 1px solid #e9edf3;
+
+  box-shadow: 0 5px 20px rgba(20,40,80,0.04);
+}
+
+.trust-grid {
+  min-height: 92px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  align-items: center;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 15px;
+
+  border-right: 1px solid #edf0f4;
+}
+
+.trust-item:last-child {
+  border-right: none;
+}
+
+.trust-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #edf5ff;
+
+  color: #1260c9;
+
+  font-size: 17px;
+}
+
+.trust-item strong {
+  display: block;
+
+  font-size: 14px;
+
+  color: #18243a;
+}
+
+.trust-item span {
+  display: block;
+
+  font-size: 12px;
+
+  color: #7b8494;
+}
+
+
+/* ==================================================
+   SECTION COMMON
+================================================== */
 
 section {
-  padding: 90px 0;
+  padding: 100px 0;
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 48px;
+
+  margin-bottom: 52px;
+}
+
+.section-label {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: #1260c9;
+
+  font-size: 13px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
 }
 
 .section-title h2 {
-  margin: 0 0 12px;
+  margin: 0 0 14px;
+
   font-size: 36px;
-  letter-spacing: -1px;
+
+  line-height: 1.3;
+
+  letter-spacing: -1.5px;
+
+  color: #101d32;
 }
 
 .section-title p {
   margin: 0;
-  color: #697386;
+
+  color: #6c7687;
+
+  font-size: 15px;
 }
 
 
-/* =========================
-   CHECK
-========================= */
+/* ==================================================
+   CHECK SECTION
+================================================== */
+
+.check-section {
+  background: #ffffff;
+}
 
 .check-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
   gap: 18px;
 }
 
 .check-card {
-  padding: 28px 22px;
-  border: 1px solid #e3e7ee;
+  position: relative;
+
+  padding: 32px 25px;
+
+  min-height: 225px;
+
+  border: 1px solid #e4e9f0;
+
   border-radius: 16px;
-  background: white;
+
+  background: #ffffff;
+
+  transition: 0.25s;
+
+  box-shadow:
+    0 8px 25px rgba(20,40,80,0.04);
+}
+
+.check-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #c9dbf4;
+
+  box-shadow:
+    0 16px 35px rgba(20,50,100,0.09);
 }
 
 .check-number {
-  font-size: 14px;
-  font-weight: 800;
-  color: #1455d9;
-  margin-bottom: 15px;
+  display: inline-block;
+
+  margin-bottom: 22px;
+
+  color: #1260c9;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
 }
 
 .check-card h3 {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
+
   font-size: 19px;
+
+  color: #152238;
+
+  letter-spacing: -0.5px;
 }
 
 .check-card p {
   margin: 0;
-  color: #6b7280;
+
+  color: #717b8b;
+
   font-size: 14px;
 }
 
 
-/* =========================
+/* ==================================================
    PROBLEM
-========================= */
+================================================== */
 
 .problem {
-  background: #f7f9fc;
+  background: #f5f8fc;
 }
 
 .problem-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 22px;
 }
 
 .problem-card {
-  background: white;
+  padding: 35px;
+
   border-radius: 17px;
-  padding: 30px;
-  border: 1px solid #e6eaf0;
+
+  background: white;
+
+  border: 1px solid #e3e8ef;
+
+  box-shadow:
+    0 8px 25px rgba(20,40,80,0.04);
+
+  transition: 0.2s;
+}
+
+.problem-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 15px 35px rgba(20,40,80,0.08);
 }
 
 .problem-card .icon {
-  font-size: 32px;
-  margin-bottom: 15px;
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  border-radius: 14px;
+
+  background: #edf5ff;
+
+  font-size: 25px;
 }
 
 .problem-card h3 {
   margin: 0 0 10px;
+
+  font-size: 19px;
+
+  letter-spacing: -0.5px;
 }
 
 .problem-card p {
   margin: 0;
-  color: #697386;
-}
 
+  color: #6e7889;
 
-/* =========================
-   SERVICES
-========================= */
-
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.service {
-  padding: 27px;
-  border-radius: 15px;
-  background: #f7f9fc;
-}
-
-.service h3 {
-  margin: 0 0 8px;
-}
-
-.service p {
-  margin: 0;
-  color: #697386;
   font-size: 14px;
 }
 
 
-/* =========================
-   보험점검 신청서
-========================= */
+/* ==================================================
+   SERVICE
+================================================== */
+
+.service-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.service {
+  padding: 30px;
+
+  border-radius: 15px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e6ebf1;
+
+  transition: 0.2s;
+}
+
+.service:hover {
+  background: #ffffff;
+
+  border-color: #cbdcf2;
+
+  box-shadow:
+    0 12px 28px rgba(20,50,100,0.07);
+}
+
+.service-number {
+  margin-bottom: 12px;
+
+  color: #1260c9;
+
+  font-size: 12px;
+
+  font-weight: 900;
+}
+
+.service h3 {
+  margin: 0 0 10px;
+
+  font-size: 17px;
+}
+
+.service p {
+  margin: 0;
+
+  color: #707a8a;
+
+  font-size: 14px;
+}
+
+
+/* ==================================================
+   APPLICATION
+================================================== */
 
 .application {
-  background: #f7f9fc;
+  background: #f5f8fc;
 }
 
 .application-box {
   max-width: 720px;
+
   margin: 0 auto;
+
+  padding: 48px;
+
+  border-radius: 20px;
+
   background: white;
-  padding: 45px;
-  border-radius: 24px;
-  border: 1px solid #e3e7ee;
-  box-shadow: 0 12px 35px rgba(20, 40, 80, 0.08);
+
+  border: 1px solid #dfe6ef;
+
+  box-shadow:
+    0 20px 50px rgba(20,40,80,0.09);
 }
 
-.application-box h3 {
+.application-header {
+  margin-bottom: 30px;
+
+  padding-bottom: 25px;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.application-header h3 {
   margin: 0 0 8px;
+
   font-size: 25px;
+
+  color: #10213b;
+
+  letter-spacing: -1px;
 }
 
-.application-box .description {
-  margin: 0 0 30px;
-  color: #697386;
+.application-header p {
+  margin: 0;
+
+  color: #737d8c;
+
+  font-size: 14px;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 21px;
 }
 
 .form-group label {
   display: block;
+
   margin-bottom: 8px;
-  font-size: 15px;
-  font-weight: 700;
+
+  color: #27344a;
+
+  font-size: 14px;
+
+  font-weight: 800;
 }
 
 .form-group input,
 .form-group select {
   width: 100%;
-  padding: 14px 15px;
-  border: 1px solid #dce1e8;
-  border-radius: 10px;
-  font-size: 15px;
-  outline: none;
+
+  min-height: 50px;
+
+  padding: 12px 15px;
+
+  border: 1px solid #dce2ea;
+
+  border-radius: 9px;
+
   background: white;
+
+  color: #263349;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition: 0.2s;
 }
 
 .form-group input:focus,
 .form-group select:focus {
-  border-color: #1455d9;
-  box-shadow: 0 0 0 3px rgba(20, 85, 217, 0.08);
+  border-color: #1260c9;
+
+  box-shadow:
+    0 0 0 3px rgba(18,96,201,0.08);
 }
 
 
-/* =========================
-   성별
-========================= */
+/* ==================================================
+   GENDER
+================================================== */
 
 .gender-group {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 10px;
 }
 
 .gender-option {
@@ -354,76 +758,124 @@ section {
 
 .gender-option input {
   position: absolute;
+
   opacity: 0;
 }
 
 .gender-option label {
-  display: block;
-  padding: 13px;
-  text-align: center;
-  border: 1px solid #dce1e8;
-  border-radius: 10px;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 50px;
+
+  margin: 0;
+
+  border: 1px solid #dce2ea;
+
+  border-radius: 9px;
+
+  color: #687385;
+
   cursor: pointer;
-  font-weight: 600;
-  color: #596273;
+
+  transition: 0.2s;
 }
 
 .gender-option input:checked + label {
-  border-color: #1455d9;
-  background: #eef4ff;
-  color: #1455d9;
+  border-color: #1260c9;
+
+  background: #edf5ff;
+
+  color: #1260c9;
+
+  font-weight: 800;
 }
 
 
-/* =========================
-   개인정보 동의
-========================= */
+/* ==================================================
+   PRIVACY
+================================================== */
 
 .agree-box {
   margin: 25px 0;
-  padding: 16px;
+
+  padding: 17px;
+
   border-radius: 10px;
-  background: #f7f9fc;
-  font-size: 13px;
-  color: #697386;
+
+  background: #f6f8fb;
+
+  border: 1px solid #e7ebf1;
+
+  color: #6c7686;
+
+  font-size: 12px;
 }
 
 .agree-box label {
   display: flex;
-  gap: 9px;
+
   align-items: flex-start;
+
+  gap: 9px;
+
   cursor: pointer;
 }
 
 .agree-box input {
   margin-top: 4px;
+
+  accent-color: #1260c9;
 }
 
 
-/* =========================
-   신청 버튼
-========================= */
+/* ==================================================
+   SUBMIT
+================================================== */
 
 .submit-btn {
   width: 100%;
-  padding: 17px;
+
+  min-height: 56px;
+
   border: none;
-  border-radius: 11px;
-  background: #1455d9;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0b3b78,
+      #1260c9
+    );
+
   color: white;
-  font-size: 17px;
-  font-weight: 800;
+
+  font-size: 16px;
+
+  font-weight: 900;
+
   cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(11,59,120,0.18);
+
+  transition: 0.2s;
 }
 
 .submit-btn:hover {
-  opacity: 0.9;
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 25px rgba(11,59,120,0.25);
 }
 
 
-/* =========================
+/* ==================================================
    PROCESS
-========================= */
+================================================== */
 
 .process {
   background: #ffffff;
@@ -431,188 +883,354 @@ section {
 
 .process-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
   gap: 15px;
 }
 
 .process-card {
+  position: relative;
+
   text-align: center;
-  background: #f7f9fc;
-  padding: 28px 18px;
-  border-radius: 16px;
-  border: 1px solid #e4e8ef;
+
+  padding: 32px 20px;
+
+  border: 1px solid #e4e9f0;
+
+  border-radius: 15px;
+
+  background: #fafbfd;
 }
 
 .step {
-  width: 44px;
-  height: 44px;
-  margin: 0 auto 15px;
+  width: 48px;
+  height: 48px;
+
+  margin: 0 auto 17px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border-radius: 50%;
-  background: #1455d9;
+
+  background: #0b3b78;
+
   color: white;
-  font-weight: 800;
+
+  font-size: 15px;
+
+  font-weight: 900;
 }
 
 .process-card h3 {
-  margin: 0 0 7px;
+  margin: 0 0 8px;
+
+  font-size: 17px;
 }
 
 .process-card p {
   margin: 0;
-  color: #697386;
-  font-size: 14px;
-}
 
+  color: #727c8b;
 
-/* =========================
-   CTA
-========================= */
-
-.cta {
-  padding: 80px 0;
-}
-
-.cta-box {
-  padding: 60px 30px;
-  border-radius: 24px;
-  text-align: center;
-  background: #1455d9;
-  color: white;
-}
-
-.cta-box h2 {
-  margin: 0 0 12px;
-  font-size: 36px;
-}
-
-.cta-box p {
-  margin: 0 0 28px;
-  opacity: 0.9;
-}
-
-.cta-phone {
-  display: inline-block;
-  padding: 16px 27px;
-  border-radius: 11px;
-  background: white;
-  color: #1455d9;
-  font-size: 20px;
-  font-weight: 800;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-  padding: 35px 0;
-  background: #111827;
-  color: #c8ced8;
-}
-
-.footer-logo {
-  color: white;
-  font-weight: 800;
-  font-size: 19px;
-  margin-bottom: 10px;
-}
-
-footer p {
-  margin: 5px 0;
   font-size: 13px;
 }
 
 
-/* =========================
-   카카오톡 상담 버튼
-========================= */
+/* ==================================================
+   CTA
+================================================== */
+
+.cta {
+  padding: 90px 0;
+
+  background: #f5f8fc;
+}
+
+.cta-box {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 70px 30px;
+
+  border-radius: 22px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #071d3a,
+      #0b3b78
+    );
+
+  color: white;
+
+  box-shadow:
+    0 20px 50px rgba(10,40,80,0.15);
+}
+
+.cta-box::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  right: -100px;
+  top: -150px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.cta-box h2 {
+  position: relative;
+  z-index: 2;
+
+  margin: 0 0 12px;
+
+  font-size: 36px;
+
+  letter-spacing: -1.5px;
+}
+
+.cta-box p {
+  position: relative;
+  z-index: 2;
+
+  margin: 0 0 30px;
+
+  color: #dce8f7;
+
+  font-size: 15px;
+}
+
+.cta-phone {
+  position: relative;
+  z-index: 2;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 56px;
+
+  padding: 0 28px;
+
+  border-radius: 9px;
+
+  background: white;
+
+  color: #0b3b78;
+
+  font-size: 20px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,0.12);
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+  padding: 42px 0;
+
+  background: #0b1220;
+
+  color: #aeb8c7;
+}
+
+.footer-logo {
+  margin-bottom: 12px;
+
+  color: white;
+
+  font-size: 19px;
+
+  font-weight: 900;
+}
+
+footer p {
+  margin: 6px 0;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* ==================================================
+   KAKAO FLOATING
+================================================== */
 
 .kakao-floating {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+
+  right: 22px;
+  bottom: 22px;
+
   z-index: 9999;
 
   display: flex;
   align-items: center;
+
   gap: 8px;
 
   padding: 14px 20px;
 
-  background: #FEE500;
-  color: #191919;
-
   border-radius: 50px;
 
-  font-size: 15px;
-  font-weight: 800;
+  background: #FEE500;
 
-  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  color: #191919;
+
+  font-size: 14px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,0.18);
 
   transition: 0.2s;
 }
 
 .kakao-floating:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 9px 25px rgba(0,0,0,0.22);
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.22);
 }
 
 .kakao-icon {
-  font-size: 21px;
+  font-size: 20px;
 }
 
 
-/* =========================
+/* ==================================================
    MOBILE
-========================= */
+================================================== */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
   nav {
     display: none;
   }
 
   .header-inner {
-    height: 64px;
+    min-height: 68px;
+  }
+
+  .check-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .process-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .service-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .container {
+    width: 90%;
+  }
+
+  header {
+    position: sticky;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+
+  .logo-mark {
+    width: 34px;
+    height: 34px;
+
+    font-size: 15px;
   }
 
   .phone-top {
-    padding: 8px 12px;
-    font-size: 13px;
+    padding: 9px 12px;
+
+    font-size: 12px;
   }
 
   .hero {
-    padding: 75px 0;
+    padding: 75px 0 80px;
   }
 
   .hero h1 {
     font-size: 42px;
+
+    letter-spacing: -2px;
   }
 
   .hero p {
-    font-size: 17px;
+    font-size: 16px;
+
+    line-height: 1.75;
+  }
+
+  .hero-buttons {
+    display: block;
   }
 
   .btn {
-    display: block;
-    text-align: center;
-    margin: 8px 0;
-  }
+    width: 100%;
 
-  .btn-light {
-    margin-left: 0;
+    margin-bottom: 10px;
   }
 
   section {
-    padding: 70px 0;
+    padding: 75px 0;
+  }
+
+  .section-title {
+    margin-bottom: 38px;
   }
 
   .section-title h2 {
-    font-size: 30px;
+    font-size: 29px;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+
+    padding: 10px 0;
+  }
+
+  .trust-item {
+    justify-content: flex-start;
+
+    border-right: none;
+
+    border-bottom: 1px solid #edf0f4;
+  }
+
+  .trust-item:last-child {
+    border-bottom: none;
   }
 
   .check-grid,
@@ -624,21 +1242,39 @@ footer p {
 
   .application-box {
     padding: 30px 20px;
+
+    border-radius: 16px;
+  }
+
+  .application-header h3 {
+    font-size: 22px;
+  }
+
+  .cta {
+    padding: 65px 0;
   }
 
   .cta-box {
-    padding: 45px 20px;
+    padding: 50px 20px;
   }
 
   .cta-box h2 {
-    font-size: 29px;
+    font-size: 28px;
+  }
+
+  .cta-phone {
+    width: 100%;
+
+    font-size: 18px;
   }
 
   .kakao-floating {
-    right: 15px;
-    bottom: 15px;
+    right: 14px;
+    bottom: 14px;
+
     padding: 13px 17px;
-    font-size: 14px;
+
+    font-size: 13px;
   }
 
 }
@@ -651,16 +1287,23 @@ footer p {
 <body>
 
 
-<!-- =========================
+<!-- ==================================================
      HEADER
-========================= -->
+================================================== -->
 
 <header>
 
   <div class="container header-inner">
 
+
     <a href="#" class="logo">
+
+      <span class="logo-mark">
+        B
+      </span>
+
       보험점검센터
+
     </a>
 
 
@@ -696,6 +1339,7 @@ footer p {
       상담전화
     </a>
 
+
   </div>
 
 </header>
@@ -705,55 +1349,71 @@ footer p {
 <main>
 
 
-<!-- =========================
+<!-- ==================================================
      HERO
-========================= -->
+================================================== -->
 
 <section class="hero">
 
   <div class="container">
 
-    <div class="hero-label">
-      보험 전문가와 함께하는 보험 점검
+
+    <div class="hero-content">
+
+
+      <div class="hero-label">
+
+        보험 전문가와 함께하는
+        체계적인 보험점검
+
+      </div>
+
+
+      <h1>
+
+        내 보험,<br>
+
+        <span>
+          제대로 준비되어
+        </span>
+        있을까요?
+
+      </h1>
+
+
+      <p>
+
+        가입한 보험의 보장내용과 보험료를 확인하고<br>
+
+        중복되거나 부족한 보장은 없는지
+        꼼꼼하게 점검해보세요.
+
+      </p>
+
+
+      <div class="hero-buttons">
+
+
+        <a
+          class="btn"
+          href="#apply"
+        >
+          무료 보험점검 신청
+        </a>
+
+
+        <a
+          class="btn btn-light"
+          href="#check"
+        >
+          보험점검 알아보기
+        </a>
+
+
+      </div>
+
+
     </div>
-
-
-    <h1>
-
-      내 보험,<br>
-
-      <span>
-        제대로 준비되어
-      </span>
-      있을까요?
-
-    </h1>
-
-
-    <p>
-
-      가입한 보험의 보장내용과 보험료를 확인하고<br>
-
-      나에게 필요한 보장이 잘 준비되어 있는지
-      점검해보세요.
-
-    </p>
-
-
-    <a
-      class="btn"
-      href="#apply"
-    >
-      무료 보험점검 신청
-    </a>
-
-
-    <a
-      class="btn btn-light"
-      href="#check"
-    >
-      보험 점검 알아보기
-    </a>
 
   </div>
 
@@ -761,16 +1421,103 @@ footer p {
 
 
 
-<!-- =========================
-     보험점검
-========================= -->
+<!-- ==================================================
+     TRUST BAR
+================================================== -->
 
-<section id="check">
+<div class="trust-bar">
+
+  <div class="container trust-grid">
+
+
+    <div class="trust-item">
+
+      <div class="trust-icon">
+        ✓
+      </div>
+
+      <div>
+
+        <strong>
+          가입 보험 객관적 확인
+        </strong>
+
+        <span>
+          현재 가입 내용을 기준으로 점검
+        </span>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="trust-item">
+
+      <div class="trust-icon">
+        ✓
+      </div>
+
+      <div>
+
+        <strong>
+          중복·부족 보장 확인
+        </strong>
+
+        <span>
+          놓치기 쉬운 보장내용까지 확인
+        </span>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="trust-item">
+
+      <div class="trust-icon">
+        ✓
+      </div>
+
+      <div>
+
+        <strong>
+          전문 상담 안내
+        </strong>
+
+        <span>
+          이해하기 쉽게 상담 진행
+        </span>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+
+<!-- ==================================================
+     보험점검
+================================================== -->
+
+<section
+  id="check"
+  class="check-section"
+>
 
   <div class="container">
 
 
     <div class="section-title">
+
+      <div class="section-label">
+        INSURANCE CHECK
+      </div>
 
       <h2>
         보험, 이런 부분을 확인해보세요
@@ -869,9 +1616,9 @@ footer p {
 
 
 
-<!-- =========================
-     이런 분께 추천
-========================= -->
+<!-- ==================================================
+     PROBLEM
+================================================== -->
 
 <section class="problem">
 
@@ -880,13 +1627,16 @@ footer p {
 
     <div class="section-title">
 
+      <div class="section-label">
+        FOR YOU
+      </div>
+
       <h2>
         이런 분께 보험점검을 권해드립니다
       </h2>
 
       <p>
-        보험은 가입하는 것만큼
-        현재 상태를 확인하는 것도 중요합니다.
+        보험은 가입하는 것만큼 현재 상태를 확인하는 것도 중요합니다.
       </p>
 
     </div>
@@ -959,9 +1709,9 @@ footer p {
 
 
 
-<!-- =========================
-     서비스
-========================= -->
+<!-- ==================================================
+     SERVICES
+================================================== -->
 
 <section id="service">
 
@@ -970,13 +1720,16 @@ footer p {
 
     <div class="section-title">
 
+      <div class="section-label">
+        OUR SERVICE
+      </div>
+
       <h2>
         보험점검 서비스
       </h2>
 
       <p>
-        현재 가입한 보험을 기준으로
-        필요한 내용을 차근차근 확인합니다.
+        현재 가입한 보험을 기준으로 필요한 내용을 차근차근 확인합니다.
       </p>
 
     </div>
@@ -987,8 +1740,12 @@ footer p {
 
       <div class="service">
 
+        <div class="service-number">
+          SERVICE 01
+        </div>
+
         <h3>
-          01. 가입 보험 확인
+          가입 보험 확인
         </h3>
 
         <p>
@@ -1002,8 +1759,12 @@ footer p {
 
       <div class="service">
 
+        <div class="service-number">
+          SERVICE 02
+        </div>
+
         <h3>
-          02. 보장내용 분석
+          보장내용 분석
         </h3>
 
         <p>
@@ -1017,8 +1778,12 @@ footer p {
 
       <div class="service">
 
+        <div class="service-number">
+          SERVICE 03
+        </div>
+
         <h3>
-          03. 중복보장 확인
+          중복보장 확인
         </h3>
 
         <p>
@@ -1032,8 +1797,12 @@ footer p {
 
       <div class="service">
 
+        <div class="service-number">
+          SERVICE 04
+        </div>
+
         <h3>
-          04. 부족한 보장 확인
+          부족한 보장 확인
         </h3>
 
         <p>
@@ -1047,8 +1816,12 @@ footer p {
 
       <div class="service">
 
+        <div class="service-number">
+          SERVICE 05
+        </div>
+
         <h3>
-          05. 보험료 점검
+          보험료 점검
         </h3>
 
         <p>
@@ -1062,8 +1835,12 @@ footer p {
 
       <div class="service">
 
+        <div class="service-number">
+          SERVICE 06
+        </div>
+
         <h3>
-          06. 맞춤 상담
+          맞춤 상담
         </h3>
 
         <p>
@@ -1082,9 +1859,9 @@ footer p {
 
 
 
-<!-- =========================
-     보험점검 신청서
-========================= -->
+<!-- ==================================================
+     APPLICATION
+================================================== -->
 
 <section
   id="apply"
@@ -1096,13 +1873,16 @@ footer p {
 
     <div class="section-title">
 
+      <div class="section-label">
+        FREE CONSULTATION
+      </div>
+
       <h2>
         보험점검 신청
       </h2>
 
       <p>
-        간단한 정보를 남겨주시면
-        보험점검 상담을 안내해드립니다.
+        간단한 정보를 남겨주시면 보험점검 상담을 안내해드립니다.
       </p>
 
     </div>
@@ -1111,31 +1891,28 @@ footer p {
     <div class="application-box">
 
 
-      <h3>
-        무료 보험점검 신청서
-      </h3>
+      <div class="application-header">
+
+        <h3>
+          무료 보험점검 신청서
+        </h3>
+
+        <p>
+          상담을 위해 필요한 최소한의 정보만 입력해주세요.
+        </p>
+
+      </div>
 
 
-      <p class="description">
-
-        아래 정보를 입력해주세요.<br>
-
-        상담을 위해 필요한 최소한의 정보만 입력받습니다.
-
-      </p>
-
-
-      <!-- =========================
-           FORMSPREE 신청서
-      ========================= -->
+      <!-- ==================================================
+           FORMSPREE
+      ================================================== -->
 
       <form
         action="https://formspree.io/f/mjyvnlqp"
         method="POST"
       >
 
-
-        <!-- 신청 제목 -->
 
         <input
           type="hidden"
@@ -1400,9 +2177,9 @@ footer p {
 
 
 
-<!-- =========================
-     진행과정
-========================= -->
+<!-- ==================================================
+     PROCESS
+================================================== -->
 
 <section
   id="process"
@@ -1414,13 +2191,16 @@ footer p {
 
     <div class="section-title">
 
+      <div class="section-label">
+        PROCESS
+      </div>
+
       <h2>
         보험점검 진행과정
       </h2>
 
       <p>
-        복잡하지 않습니다.
-        순서대로 차근차근 진행합니다.
+        복잡하지 않습니다. 순서대로 차근차근 진행합니다.
       </p>
 
     </div>
@@ -1512,9 +2292,9 @@ footer p {
 
 
 
-<!-- =========================
-     상담문의
-========================= -->
+<!-- ==================================================
+     CTA
+================================================== -->
 
 <section
   id="contact"
@@ -1559,9 +2339,9 @@ footer p {
 
 
 
-<!-- =========================
+<!-- ==================================================
      FOOTER
-========================= -->
+================================================== -->
 
 <footer>
 
@@ -1597,9 +2377,9 @@ footer p {
 
 
 
-<!-- =========================
-     카카오톡 상담 버튼
-========================= -->
+<!-- ==================================================
+     KAKAO TALK
+================================================== -->
 
 <a
   href="https://open.kakao.com/o/sUxshkKi"
