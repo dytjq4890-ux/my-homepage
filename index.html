@@ -7,23 +7,24 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>보험점검센터 | 내 보험 제대로 점검하기</title>
+<title>보험점검센터 | 신요섭 보험설계사</title>
 
 <meta
-  name="description"
-  content="보험점검센터에서 가입한 보험의 보장내용과 보험료, 중복보장 및 부족한 보장을 확인해보세요."
+name="description"
+content="보험점검센터 신요섭 보험설계사와 함께 가입한 보험의 보장내용과 보험료, 중복보장 및 부족한 보장을 점검해보세요."
 >
 
 <meta
-  name="keywords"
-  content="보험점검, 보험점검센터, 보험상담, 보험분석, 보험료점검"
+name="keywords"
+content="보험점검, 보험점검센터, 신요섭 보험설계사, 보험상담, 보험분석, 보험료점검"
 >
+
 
 <style>
 
-/* ==================================================
-   RESET
-================================================== */
+/* =========================
+   기본 설정
+========================= */
 
 * {
   box-sizing: border-box;
@@ -35,13 +36,17 @@ html {
 
 body {
   margin: 0;
+
   font-family:
-    "Noto Sans KR",
-    "Apple SD Gothic Neo",
-    Arial,
-    sans-serif;
+  "Noto Sans KR",
+  "Apple SD Gothic Neo",
+  Arial,
+  sans-serif;
+
   color: #172033;
+
   background: #ffffff;
+
   line-height: 1.65;
 }
 
@@ -58,20 +63,24 @@ select {
 
 .container {
   width: min(1160px, 92%);
+
   margin: 0 auto;
 }
 
 
-/* ==================================================
+/* =========================
    HEADER
-================================================== */
+========================= */
 
 header {
+
   position: sticky;
+
   top: 0;
+
   z-index: 1000;
 
-  background: rgba(255,255,255,0.96);
+  background: rgba(255,255,255,0.97);
 
   backdrop-filter: blur(12px);
 
@@ -79,34 +88,45 @@ header {
 }
 
 .header-inner {
+
   min-height: 76px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
-  gap: 30px;
+  gap: 25px;
 }
 
 .logo {
+
   display: flex;
+
   align-items: center;
+
   gap: 10px;
 
-  font-size: 22px;
-  font-weight: 900;
-
   color: #0b2d5c;
+
+  font-size: 21px;
+
+  font-weight: 900;
 
   letter-spacing: -1px;
 }
 
 .logo-mark {
+
   width: 38px;
+
   height: 38px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   border-radius: 10px;
@@ -115,24 +135,35 @@ header {
 
   color: white;
 
-  font-size: 18px;
   font-weight: 900;
 }
 
-nav {
-  display: flex;
-  align-items: center;
+.logo-text small {
 
-  gap: 30px;
+  display: block;
 
-  font-size: 14px;
+  color: #788397;
+
+  font-size: 10px;
+
   font-weight: 700;
 
-  color: #455166;
+  letter-spacing: 0;
 }
 
-nav a {
-  transition: 0.2s;
+nav {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 27px;
+
+  color: #4a5669;
+
+  font-size: 14px;
+
+  font-weight: 700;
 }
 
 nav a:hover {
@@ -140,8 +171,11 @@ nav a:hover {
 }
 
 .phone-top {
+
   display: inline-flex;
+
   align-items: center;
+
   justify-content: center;
 
   padding: 11px 17px;
@@ -152,78 +186,70 @@ nav a:hover {
 
   color: white;
 
-  font-size: 14px;
-  font-weight: 800;
+  font-size: 13px;
 
-  box-shadow: 0 5px 15px rgba(11,59,120,0.18);
+  font-weight: 800;
 }
 
 
-/* ==================================================
+/* =========================
    HERO
-================================================== */
+========================= */
 
 .hero {
+
   position: relative;
+
   overflow: hidden;
 
-  background:
-    linear-gradient(
-      135deg,
-      #071d3a 0%,
-      #0b3b78 58%,
-      #1260c9 100%
-    );
-
-  padding: 105px 0 115px;
+  padding: 100px 0 110px;
 
   color: white;
+
+  background:
+  linear-gradient(
+    135deg,
+    #071d3a 0%,
+    #0b3b78 60%,
+    #1260c9 100%
+  );
 }
 
 .hero::before {
+
   content: "";
 
   position: absolute;
 
-  width: 520px;
-  height: 520px;
+  width: 600px;
 
-  right: -180px;
-  top: -180px;
+  height: 600px;
 
-  border-radius: 50%;
+  right: -230px;
 
-  background: rgba(255,255,255,0.05);
-}
-
-.hero::after {
-  content: "";
-
-  position: absolute;
-
-  width: 300px;
-  height: 300px;
-
-  right: 140px;
-  bottom: -180px;
+  top: -250px;
 
   border-radius: 50%;
 
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.045);
 }
 
 .hero-content {
+
   position: relative;
+
   z-index: 2;
 
-  max-width: 780px;
+  max-width: 800px;
 }
 
 .hero-label {
-  display: inline-flex;
-  align-items: center;
 
-  padding: 8px 14px;
+  display: inline-flex;
+
+  padding: 8px 15px;
+
+  margin-bottom: 22px;
 
   border: 1px solid rgba(255,255,255,0.2);
 
@@ -231,18 +257,31 @@ nav a:hover {
 
   background: rgba(255,255,255,0.08);
 
-  color: #dbeaff;
+  color: #dceaff;
 
   font-size: 13px;
-  font-weight: 700;
 
-  margin-bottom: 24px;
+  font-weight: 800;
+}
+
+.hero-name {
+
+  margin-bottom: 15px;
+
+  color: #a9d5ff;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.2px;
 }
 
 .hero h1 {
+
   margin: 0;
 
-  font-size: clamp(40px, 6vw, 66px);
+  font-size: clamp(40px, 6vw, 65px);
 
   line-height: 1.16;
 
@@ -256,84 +295,98 @@ nav a:hover {
 }
 
 .hero p {
-  margin: 28px 0 35px;
 
-  font-size: 18px;
+  margin: 27px 0 34px;
 
   color: #dce7f7;
+
+  font-size: 18px;
 
   line-height: 1.8;
 }
 
 .hero-buttons {
+
   display: flex;
+
   flex-wrap: wrap;
+
   gap: 10px;
 }
 
 .btn {
+
   display: inline-flex;
+
   align-items: center;
+
   justify-content: center;
 
   min-height: 52px;
 
-  padding: 0 24px;
+  padding: 0 25px;
 
   border-radius: 9px;
 
-  background: #ffffff;
+  background: white;
 
   color: #0b3b78;
 
   font-size: 15px;
-  font-weight: 800;
+
+  font-weight: 900;
 
   transition: 0.2s;
 }
 
 .btn:hover {
+
   transform: translateY(-2px);
 
   box-shadow:
-    0 10px 25px rgba(0,0,0,0.15);
+  0 10px 25px rgba(0,0,0,0.15);
 }
 
 .btn-light {
-  background: rgba(255,255,255,0.09);
 
-  color: white;
+  background: rgba(255,255,255,0.08);
 
   border: 1px solid rgba(255,255,255,0.28);
+
+  color: white;
 }
 
 
-/* ==================================================
-   TRUST BAR
-================================================== */
+/* =========================
+   TRUST
+========================= */
 
 .trust-bar {
-  background: #ffffff;
 
-  border-bottom: 1px solid #e9edf3;
+  background: white;
 
-  box-shadow: 0 5px 20px rgba(20,40,80,0.04);
+  border-bottom: 1px solid #e8edf3;
+
+  box-shadow:
+  0 5px 20px rgba(20,40,80,0.04);
 }
 
 .trust-grid {
-  min-height: 92px;
+
+  min-height: 90px;
 
   display: grid;
 
   grid-template-columns:
-    repeat(3, 1fr);
-
-  align-items: center;
+  repeat(3,1fr);
 }
 
 .trust-item {
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   gap: 12px;
@@ -348,11 +401,15 @@ nav a:hover {
 }
 
 .trust-icon {
+
   width: 38px;
+
   height: 38px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
@@ -361,41 +418,43 @@ nav a:hover {
 
   color: #1260c9;
 
-  font-size: 17px;
+  font-weight: 900;
 }
 
 .trust-item strong {
+
   display: block;
 
   font-size: 14px;
-
-  color: #18243a;
 }
 
 .trust-item span {
+
   display: block;
 
-  font-size: 12px;
-
   color: #7b8494;
+
+  font-size: 12px;
 }
 
 
-/* ==================================================
-   SECTION COMMON
-================================================== */
+/* =========================
+   공통 섹션
+========================= */
 
 section {
   padding: 100px 0;
 }
 
 .section-title {
+
   text-align: center;
 
-  margin-bottom: 52px;
+  margin-bottom: 50px;
 }
 
 .section-label {
+
   display: inline-block;
 
   margin-bottom: 10px;
@@ -410,18 +469,20 @@ section {
 }
 
 .section-title h2 {
+
   margin: 0 0 14px;
+
+  color: #101d32;
 
   font-size: 36px;
 
   line-height: 1.3;
 
   letter-spacing: -1.5px;
-
-  color: #101d32;
 }
 
 .section-title p {
+
   margin: 0;
 
   color: #6c7687;
@@ -430,55 +491,194 @@ section {
 }
 
 
-/* ==================================================
-   CHECK SECTION
-================================================== */
+/* =========================
+   전문가 소개
+========================= */
 
-.check-section {
-  background: #ffffff;
+.expert {
+
+  background: #f5f8fc;
 }
 
-.check-grid {
+.expert-box {
+
+  display: grid;
+
+  grid-template-columns: 270px 1fr;
+
+  gap: 45px;
+
+  align-items: center;
+
+  max-width: 950px;
+
+  margin: 0 auto;
+
+  padding: 48px;
+
+  border-radius: 20px;
+
+  background: white;
+
+  border: 1px solid #e1e7ef;
+
+  box-shadow:
+  0 15px 40px rgba(20,40,80,0.07);
+}
+
+.expert-profile {
+
+  text-align: center;
+}
+
+.expert-avatar {
+
+  width: 150px;
+
+  height: 150px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+  linear-gradient(
+    135deg,
+    #0b3b78,
+    #1260c9
+  );
+
+  color: white;
+
+  font-size: 45px;
+
+  font-weight: 900;
+
+  box-shadow:
+  0 12px 30px rgba(11,59,120,0.2);
+}
+
+.expert-profile h3 {
+
+  margin: 0;
+
+  color: #14233b;
+
+  font-size: 22px;
+}
+
+.expert-profile p {
+
+  margin: 4px 0 0;
+
+  color: #738095;
+
+  font-size: 13px;
+}
+
+.expert-content h3 {
+
+  margin: 0 0 15px;
+
+  color: #10213b;
+
+  font-size: 26px;
+
+  letter-spacing: -1px;
+}
+
+.expert-content h3 span {
+  color: #1260c9;
+}
+
+.expert-content p {
+
+  margin: 0 0 20px;
+
+  color: #626e80;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+}
+
+.expert-points {
+
   display: grid;
 
   grid-template-columns:
-    repeat(4, 1fr);
+  repeat(2,1fr);
+
+  gap: 10px;
+}
+
+.expert-point {
+
+  padding: 13px 15px;
+
+  border-radius: 8px;
+
+  background: #f5f8fc;
+
+  color: #36445a;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+/* =========================
+   보험점검
+========================= */
+
+.check-grid {
+
+  display: grid;
+
+  grid-template-columns:
+  repeat(4,1fr);
 
   gap: 18px;
 }
 
 .check-card {
-  position: relative;
 
   padding: 32px 25px;
 
-  min-height: 225px;
+  min-height: 220px;
 
   border: 1px solid #e4e9f0;
 
   border-radius: 16px;
 
-  background: #ffffff;
-
-  transition: 0.25s;
+  background: white;
 
   box-shadow:
-    0 8px 25px rgba(20,40,80,0.04);
+  0 8px 25px rgba(20,40,80,0.04);
+
+  transition: 0.25s;
 }
 
 .check-card:hover {
+
   transform: translateY(-5px);
 
   border-color: #c9dbf4;
 
   box-shadow:
-    0 16px 35px rgba(20,50,100,0.09);
+  0 16px 35px rgba(20,50,100,0.09);
 }
 
 .check-number {
-  display: inline-block;
 
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 
   color: #1260c9;
 
@@ -490,16 +690,14 @@ section {
 }
 
 .check-card h3 {
+
   margin: 0 0 12px;
 
   font-size: 19px;
-
-  color: #152238;
-
-  letter-spacing: -0.5px;
 }
 
 .check-card p {
+
   margin: 0;
 
   color: #717b8b;
@@ -508,24 +706,27 @@ section {
 }
 
 
-/* ==================================================
-   PROBLEM
-================================================== */
+/* =========================
+   이런 분께
+========================= */
 
 .problem {
+
   background: #f5f8fc;
 }
 
 .problem-grid {
+
   display: grid;
 
   grid-template-columns:
-    repeat(3, 1fr);
+  repeat(3,1fr);
 
   gap: 22px;
 }
 
 .problem-card {
+
   padding: 35px;
 
   border-radius: 17px;
@@ -535,24 +736,19 @@ section {
   border: 1px solid #e3e8ef;
 
   box-shadow:
-    0 8px 25px rgba(20,40,80,0.04);
-
-  transition: 0.2s;
-}
-
-.problem-card:hover {
-  transform: translateY(-4px);
-
-  box-shadow:
-    0 15px 35px rgba(20,40,80,0.08);
+  0 8px 25px rgba(20,40,80,0.04);
 }
 
 .problem-card .icon {
+
   width: 54px;
+
   height: 54px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   margin-bottom: 20px;
@@ -561,18 +757,18 @@ section {
 
   background: #edf5ff;
 
-  font-size: 25px;
+  font-size: 24px;
 }
 
 .problem-card h3 {
+
   margin: 0 0 10px;
 
   font-size: 19px;
-
-  letter-spacing: -0.5px;
 }
 
 .problem-card p {
+
   margin: 0;
 
   color: #6e7889;
@@ -581,20 +777,22 @@ section {
 }
 
 
-/* ==================================================
-   SERVICE
-================================================== */
+/* =========================
+   서비스
+========================= */
 
 .service-grid {
+
   display: grid;
 
   grid-template-columns:
-    repeat(3, 1fr);
+  repeat(3,1fr);
 
   gap: 18px;
 }
 
 .service {
+
   padding: 30px;
 
   border-radius: 15px;
@@ -607,15 +805,17 @@ section {
 }
 
 .service:hover {
-  background: #ffffff;
+
+  background: white;
 
   border-color: #cbdcf2;
 
   box-shadow:
-    0 12px 28px rgba(20,50,100,0.07);
+  0 12px 28px rgba(20,50,100,0.07);
 }
 
 .service-number {
+
   margin-bottom: 12px;
 
   color: #1260c9;
@@ -626,12 +826,14 @@ section {
 }
 
 .service h3 {
+
   margin: 0 0 10px;
 
   font-size: 17px;
 }
 
 .service p {
+
   margin: 0;
 
   color: #707a8a;
@@ -640,15 +842,17 @@ section {
 }
 
 
-/* ==================================================
-   APPLICATION
-================================================== */
+/* =========================
+   신청서
+========================= */
 
 .application {
+
   background: #f5f8fc;
 }
 
 .application-box {
+
   max-width: 720px;
 
   margin: 0 auto;
@@ -662,10 +866,11 @@ section {
   border: 1px solid #dfe6ef;
 
   box-shadow:
-    0 20px 50px rgba(20,40,80,0.09);
+  0 20px 50px rgba(20,40,80,0.09);
 }
 
 .application-header {
+
   margin-bottom: 30px;
 
   padding-bottom: 25px;
@@ -674,16 +879,16 @@ section {
 }
 
 .application-header h3 {
+
   margin: 0 0 8px;
 
   font-size: 25px;
 
   color: #10213b;
-
-  letter-spacing: -1px;
 }
 
 .application-header p {
+
   margin: 0;
 
   color: #737d8c;
@@ -696,6 +901,7 @@ section {
 }
 
 .form-group label {
+
   display: block;
 
   margin-bottom: 8px;
@@ -709,6 +915,7 @@ section {
 
 .form-group input,
 .form-group select {
+
   width: 100%;
 
   min-height: 50px;
@@ -726,28 +933,26 @@ section {
   font-size: 14px;
 
   outline: none;
-
-  transition: 0.2s;
 }
 
 .form-group input:focus,
 .form-group select:focus {
+
   border-color: #1260c9;
 
   box-shadow:
-    0 0 0 3px rgba(18,96,201,0.08);
+  0 0 0 3px rgba(18,96,201,0.08);
 }
 
 
-/* ==================================================
-   GENDER
-================================================== */
+/* 성별 */
 
 .gender-group {
+
   display: grid;
 
   grid-template-columns:
-    1fr 1fr;
+  1fr 1fr;
 
   gap: 10px;
 }
@@ -757,15 +962,18 @@ section {
 }
 
 .gender-option input {
+
   position: absolute;
 
   opacity: 0;
 }
 
 .gender-option label {
+
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   min-height: 50px;
@@ -779,26 +987,22 @@ section {
   color: #687385;
 
   cursor: pointer;
-
-  transition: 0.2s;
 }
 
 .gender-option input:checked + label {
+
   border-color: #1260c9;
 
   background: #edf5ff;
 
   color: #1260c9;
-
-  font-weight: 800;
 }
 
 
-/* ==================================================
-   PRIVACY
-================================================== */
+/* 개인정보 */
 
 .agree-box {
+
   margin: 25px 0;
 
   padding: 17px;
@@ -815,6 +1019,7 @@ section {
 }
 
 .agree-box label {
+
   display: flex;
 
   align-items: flex-start;
@@ -825,17 +1030,17 @@ section {
 }
 
 .agree-box input {
+
   margin-top: 4px;
 
   accent-color: #1260c9;
 }
 
 
-/* ==================================================
-   SUBMIT
-================================================== */
+/* 신청 버튼 */
 
 .submit-btn {
+
   width: 100%;
 
   min-height: 56px;
@@ -845,11 +1050,11 @@ section {
   border-radius: 9px;
 
   background:
-    linear-gradient(
-      135deg,
-      #0b3b78,
-      #1260c9
-    );
+  linear-gradient(
+    135deg,
+    #0b3b78,
+    #1260c9
+  );
 
   color: white;
 
@@ -860,42 +1065,34 @@ section {
   cursor: pointer;
 
   box-shadow:
-    0 8px 20px rgba(11,59,120,0.18);
-
-  transition: 0.2s;
+  0 8px 20px rgba(11,59,120,0.18);
 }
 
 .submit-btn:hover {
+
   transform: translateY(-2px);
-
-  box-shadow:
-    0 12px 25px rgba(11,59,120,0.25);
 }
 
 
-/* ==================================================
-   PROCESS
-================================================== */
-
-.process {
-  background: #ffffff;
-}
+/* =========================
+   진행과정
+========================= */
 
 .process-grid {
+
   display: grid;
 
   grid-template-columns:
-    repeat(4, 1fr);
+  repeat(4,1fr);
 
   gap: 15px;
 }
 
 .process-card {
-  position: relative;
-
-  text-align: center;
 
   padding: 32px 20px;
+
+  text-align: center;
 
   border: 1px solid #e4e9f0;
 
@@ -905,13 +1102,17 @@ section {
 }
 
 .step {
+
   width: 48px;
+
   height: 48px;
 
   margin: 0 auto 17px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
@@ -920,18 +1121,18 @@ section {
 
   color: white;
 
-  font-size: 15px;
-
   font-weight: 900;
 }
 
 .process-card h3 {
+
   margin: 0 0 8px;
 
   font-size: 17px;
 }
 
 .process-card p {
+
   margin: 0;
 
   color: #727c8b;
@@ -940,17 +1141,19 @@ section {
 }
 
 
-/* ==================================================
+/* =========================
    CTA
-================================================== */
+========================= */
 
 .cta {
+
   padding: 90px 0;
 
   background: #f5f8fc;
 }
 
 .cta-box {
+
   position: relative;
 
   overflow: hidden;
@@ -962,37 +1165,16 @@ section {
   text-align: center;
 
   background:
-    linear-gradient(
-      135deg,
-      #071d3a,
-      #0b3b78
-    );
+  linear-gradient(
+    135deg,
+    #071d3a,
+    #0b3b78
+  );
 
   color: white;
-
-  box-shadow:
-    0 20px 50px rgba(10,40,80,0.15);
-}
-
-.cta-box::after {
-  content: "";
-
-  position: absolute;
-
-  width: 300px;
-  height: 300px;
-
-  right: -100px;
-  top: -150px;
-
-  border-radius: 50%;
-
-  border: 1px solid rgba(255,255,255,0.08);
 }
 
 .cta-box h2 {
-  position: relative;
-  z-index: 2;
 
   margin: 0 0 12px;
 
@@ -1002,8 +1184,6 @@ section {
 }
 
 .cta-box p {
-  position: relative;
-  z-index: 2;
 
   margin: 0 0 30px;
 
@@ -1013,12 +1193,11 @@ section {
 }
 
 .cta-phone {
-  position: relative;
-  z-index: 2;
 
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
   min-height: 56px;
@@ -1034,18 +1213,16 @@ section {
   font-size: 20px;
 
   font-weight: 900;
-
-  box-shadow:
-    0 8px 25px rgba(0,0,0,0.12);
 }
 
 
-/* ==================================================
+/* =========================
    FOOTER
-================================================== */
+========================= */
 
 footer {
-  padding: 42px 0;
+
+  padding: 45px 0;
 
   background: #0b1220;
 
@@ -1053,6 +1230,7 @@ footer {
 }
 
 .footer-logo {
+
   margin-bottom: 12px;
 
   color: white;
@@ -1062,28 +1240,41 @@ footer {
   font-weight: 900;
 }
 
+.footer-name {
+
+  color: #dce5f2;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
 footer p {
+
   margin: 6px 0;
 
   font-size: 12px;
 
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 
-/* ==================================================
-   KAKAO FLOATING
-================================================== */
+/* =========================
+   카카오톡 버튼
+========================= */
 
 .kakao-floating {
+
   position: fixed;
 
   right: 22px;
+
   bottom: 22px;
 
   z-index: 9999;
 
   display: flex;
+
   align-items: center;
 
   gap: 8px;
@@ -1101,16 +1292,14 @@ footer p {
   font-weight: 900;
 
   box-shadow:
-    0 8px 25px rgba(0,0,0,0.18);
+  0 8px 25px rgba(0,0,0,0.18);
 
   transition: 0.2s;
 }
 
 .kakao-floating:hover {
-  transform: translateY(-4px);
 
-  box-shadow:
-    0 12px 30px rgba(0,0,0,0.22);
+  transform: translateY(-4px);
 }
 
 .kakao-icon {
@@ -1118,9 +1307,9 @@ footer p {
 }
 
 
-/* ==================================================
-   MOBILE
-================================================== */
+/* =========================
+   모바일
+========================= */
 
 @media (max-width: 900px) {
 
@@ -1128,23 +1317,33 @@ footer p {
     display: none;
   }
 
-  .header-inner {
-    min-height: 68px;
-  }
-
   .check-grid {
+
     grid-template-columns:
-      repeat(2, 1fr);
+    repeat(2,1fr);
   }
 
   .process-grid {
+
     grid-template-columns:
-      repeat(2, 1fr);
+    repeat(2,1fr);
   }
 
   .service-grid {
+
     grid-template-columns:
-      repeat(2, 1fr);
+    repeat(2,1fr);
+  }
+
+  .expert-box {
+
+    grid-template-columns: 1fr;
+
+    text-align: center;
+  }
+
+  .expert-points {
+    text-align: left;
   }
 
 }
@@ -1156,41 +1355,43 @@ footer p {
     width: 90%;
   }
 
-  header {
-    position: sticky;
+  .header-inner {
+    min-height: 68px;
   }
 
   .logo {
-    font-size: 19px;
+    font-size: 18px;
   }
 
   .logo-mark {
-    width: 34px;
-    height: 34px;
 
-    font-size: 15px;
+    width: 34px;
+
+    height: 34px;
   }
 
   .phone-top {
+
     padding: 9px 12px;
 
     font-size: 12px;
   }
 
   .hero {
-    padding: 75px 0 80px;
+
+    padding: 72px 0 80px;
   }
 
   .hero h1 {
+
     font-size: 42px;
 
     letter-spacing: -2px;
   }
 
   .hero p {
-    font-size: 16px;
 
-    line-height: 1.75;
+    font-size: 16px;
   }
 
   .hero-buttons {
@@ -1198,6 +1399,7 @@ footer p {
   }
 
   .btn {
+
     width: 100%;
 
     margin-bottom: 10px;
@@ -1207,21 +1409,19 @@ footer p {
     padding: 75px 0;
   }
 
-  .section-title {
-    margin-bottom: 38px;
-  }
-
   .section-title h2 {
     font-size: 29px;
   }
 
   .trust-grid {
+
     grid-template-columns: 1fr;
 
     padding: 10px 0;
   }
 
   .trust-item {
+
     justify-content: flex-start;
 
     border-right: none;
@@ -1237,24 +1437,40 @@ footer p {
   .problem-grid,
   .service-grid,
   .process-grid {
+
+    grid-template-columns: 1fr;
+  }
+
+  .expert-box {
+
+    padding: 30px 20px;
+  }
+
+  .expert-avatar {
+
+    width: 125px;
+
+    height: 125px;
+
+    font-size: 38px;
+  }
+
+  .expert-content h3 {
+    font-size: 22px;
+  }
+
+  .expert-points {
+
     grid-template-columns: 1fr;
   }
 
   .application-box {
+
     padding: 30px 20px;
-
-    border-radius: 16px;
-  }
-
-  .application-header h3 {
-    font-size: 22px;
-  }
-
-  .cta {
-    padding: 65px 0;
   }
 
   .cta-box {
+
     padding: 50px 20px;
   }
 
@@ -1263,13 +1479,16 @@ footer p {
   }
 
   .cta-phone {
+
     width: 100%;
 
     font-size: 18px;
   }
 
   .kakao-floating {
+
     right: 14px;
+
     bottom: 14px;
 
     padding: 13px 17px;
@@ -1287,60 +1506,70 @@ footer p {
 <body>
 
 
-<!-- ==================================================
+<!-- =========================
      HEADER
-================================================== -->
+========================= -->
 
 <header>
 
-  <div class="container header-inner">
+<div class="container header-inner">
 
 
-    <a href="#" class="logo">
+<a href="#" class="logo">
 
-      <span class="logo-mark">
-        B
-      </span>
+<span class="logo-mark">
+B
+</span>
 
-      보험점검센터
+<span class="logo-text">
 
-    </a>
+보험점검센터
 
+<small>
+신요섭 보험설계사
+</small>
 
-    <nav>
+</span>
 
-      <a href="#check">
-        보험점검
-      </a>
-
-      <a href="#service">
-        서비스
-      </a>
-
-      <a href="#apply">
-        점검 신청
-      </a>
-
-      <a href="#process">
-        진행과정
-      </a>
-
-      <a href="#contact">
-        상담문의
-      </a>
-
-    </nav>
+</a>
 
 
-    <a
-      class="phone-top"
-      href="tel:01086462117"
-    >
-      상담전화
-    </a>
+<nav>
+
+<a href="#expert">
+전문가 소개
+</a>
+
+<a href="#check">
+보험점검
+</a>
+
+<a href="#service">
+서비스
+</a>
+
+<a href="#apply">
+점검 신청
+</a>
+
+<a href="#process">
+진행과정
+</a>
+
+</nav>
 
 
-  </div>
+<a
+class="phone-top"
+href="tel:01086462117"
+>
+
+상담전화
+
+</a>
+
+
+</div>
 
 </header>
 
@@ -1349,988 +1578,1065 @@ footer p {
 <main>
 
 
-<!-- ==================================================
+<!-- =========================
      HERO
-================================================== -->
+========================= -->
 
 <section class="hero">
 
-  <div class="container">
+<div class="container">
+
+<div class="hero-content">
 
 
-    <div class="hero-content">
+<div class="hero-label">
+
+보험점검 전문 상담
+
+</div>
 
 
-      <div class="hero-label">
+<div class="hero-name">
 
-        보험 전문가와 함께하는
-        체계적인 보험점검
+보험설계사 신요섭
 
-      </div>
-
-
-      <h1>
-
-        내 보험,<br>
-
-        <span>
-          제대로 준비되어
-        </span>
-        있을까요?
-
-      </h1>
+</div>
 
 
-      <p>
+<h1>
 
-        가입한 보험의 보장내용과 보험료를 확인하고<br>
+내 보험,<br>
 
-        중복되거나 부족한 보장은 없는지
-        꼼꼼하게 점검해보세요.
+<span>
+제대로 준비되어
+</span>
+있을까요?
 
-      </p>
-
-
-      <div class="hero-buttons">
-
-
-        <a
-          class="btn"
-          href="#apply"
-        >
-          무료 보험점검 신청
-        </a>
+</h1>
 
 
-        <a
-          class="btn btn-light"
-          href="#check"
-        >
-          보험점검 알아보기
-        </a>
+<p>
+
+가입한 보험의 보장내용과 보험료를 확인하고<br>
+
+중복되거나 부족한 보장은 없는지
+꼼꼼하게 점검해보세요.
+
+</p>
 
 
-      </div>
+<div class="hero-buttons">
 
 
-    </div>
+<a
+href="#apply"
+class="btn"
+>
 
-  </div>
+보험점검 신청하기
+
+</a>
+
+
+<a
+href="https://open.kakao.com/o/sUxshkKi"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-light"
+>
+
+카카오톡 상담
+
+</a>
+
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
 
-<!-- ==================================================
-     TRUST BAR
-================================================== -->
+<!-- =========================
+     TRUST
+========================= -->
 
 <div class="trust-bar">
 
-  <div class="container trust-grid">
+<div class="container trust-grid">
 
 
-    <div class="trust-item">
+<div class="trust-item">
 
-      <div class="trust-icon">
-        ✓
-      </div>
+<div class="trust-icon">
+✓
+</div>
 
-      <div>
+<div>
 
-        <strong>
-          가입 보험 객관적 확인
-        </strong>
+<strong>
+가입 보험 확인
+</strong>
 
-        <span>
-          현재 가입 내용을 기준으로 점검
-        </span>
+<span>
+현재 가입 내용을 기준으로 점검
+</span>
 
-      </div>
-
-    </div>
-
-
-
-    <div class="trust-item">
-
-      <div class="trust-icon">
-        ✓
-      </div>
-
-      <div>
-
-        <strong>
-          중복·부족 보장 확인
-        </strong>
-
-        <span>
-          놓치기 쉬운 보장내용까지 확인
-        </span>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="trust-item">
-
-      <div class="trust-icon">
-        ✓
-      </div>
-
-      <div>
-
-        <strong>
-          전문 상담 안내
-        </strong>
-
-        <span>
-          이해하기 쉽게 상담 진행
-        </span>
-
-      </div>
-
-    </div>
-
-
-  </div>
+</div>
 
 </div>
 
 
 
-<!-- ==================================================
-     보험점검
-================================================== -->
+<div class="trust-item">
+
+<div class="trust-icon">
+✓
+</div>
+
+<div>
+
+<strong>
+중복·부족 보장 확인
+</strong>
+
+<span>
+놓치기 쉬운 보장까지 확인
+</span>
+
+</div>
+
+</div>
+
+
+
+<div class="trust-item">
+
+<div class="trust-icon">
+✓
+</div>
+
+<div>
+
+<strong>
+신요섭 보험설계사 상담
+</strong>
+
+<span>
+이해하기 쉽게 상담 안내
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =========================
+     EXPERT
+========================= -->
 
 <section
-  id="check"
-  class="check-section"
+id="expert"
+class="expert"
 >
 
-  <div class="container">
+<div class="container">
 
 
-    <div class="section-title">
+<div class="section-title">
 
-      <div class="section-label">
-        INSURANCE CHECK
-      </div>
+<div class="section-label">
+CONSULTANT
+</div>
 
-      <h2>
-        보험, 이런 부분을 확인해보세요
-      </h2>
+<h2>
+보험점검 전문가 소개
+</h2>
 
-      <p>
-        현재 가입한 보험을 객관적으로 살펴보는 것부터 시작합니다.
-      </p>
+<p>
+내가 가입한 보험을 제대로 이해할 수 있도록 함께 확인합니다.
+</p>
 
-    </div>
-
-
-    <div class="check-grid">
+</div>
 
 
-      <div class="check-card">
-
-        <div class="check-number">
-          CHECK 01
-        </div>
-
-        <h3>
-          보험료가 적정한지
-        </h3>
-
-        <p>
-          현재 납입하고 있는 보험료와
-          가입 내용을 함께 확인합니다.
-        </p>
-
-      </div>
+<div class="expert-box">
 
 
-
-      <div class="check-card">
-
-        <div class="check-number">
-          CHECK 02
-        </div>
-
-        <h3>
-          보장이 중복되는지
-        </h3>
-
-        <p>
-          여러 보험에 비슷한 보장이
-          반복되어 있는지 살펴봅니다.
-        </p>
-
-      </div>
+<div class="expert-profile">
 
 
-
-      <div class="check-card">
-
-        <div class="check-number">
-          CHECK 03
-        </div>
-
-        <h3>
-          부족한 보장은 없는지
-        </h3>
-
-        <p>
-          현재 가입 내용에서 필요한 보장이
-          부족하지 않은지 확인합니다.
-        </p>
-
-      </div>
+<div class="expert-avatar">
+신
+</div>
 
 
+<h3>
+신요섭
+</h3>
 
-      <div class="check-card">
-
-        <div class="check-number">
-          CHECK 04
-        </div>
-
-        <h3>
-          보장내용을 알고 있는지
-        </h3>
-
-        <p>
-          가입한 보험의 주요 보장과 조건을
-          쉽게 확인할 수 있도록 안내합니다.
-        </p>
-
-      </div>
+<p>
+보험설계사
+</p>
 
 
-    </div>
+</div>
 
-  </div>
+
+<div class="expert-content">
+
+
+<h3>
+
+안녕하세요.
+<span>신요섭 보험설계사</span>입니다.
+
+</h3>
+
+
+<p>
+
+보험은 가입해 놓고 끝나는 것이 아니라
+현재 나에게 필요한 보장이 제대로 준비되어 있는지
+주기적으로 확인하는 것이 중요합니다.
+
+가입한 보험을 어렵게 느끼시는 분들도
+현재 보험의 보장내용과 보험료를 하나씩 확인하면서
+쉽게 이해하실 수 있도록 상담을 도와드립니다.
+
+</p>
+
+
+<div class="expert-points">
+
+
+<div class="expert-point">
+✓ 가입 보험 내용 확인
+</div>
+
+<div class="expert-point">
+✓ 보장내용 이해하기 쉽게 안내
+</div>
+
+<div class="expert-point">
+✓ 중복 보장 확인
+</div>
+
+<div class="expert-point">
+✓ 부족한 보장 확인
+</div>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
 
-<!-- ==================================================
+<!-- =========================
+     CHECK
+========================= -->
+
+<section id="check">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<div class="section-label">
+INSURANCE CHECK
+</div>
+
+<h2>
+내 보험, 무엇을 점검해야 할까요?
+</h2>
+
+<p>
+현재 가입한 보험을 기준으로 필요한 내용을 차근차근 확인합니다.
+</p>
+
+</div>
+
+
+<div class="check-grid">
+
+
+<div class="check-card">
+
+<div class="check-number">
+CHECK 01
+</div>
+
+<h3>
+보험료가 적정한지
+</h3>
+
+<p>
+현재 납입하고 있는 보험료와
+가입 내용을 함께 확인합니다.
+</p>
+
+</div>
+
+
+
+<div class="check-card">
+
+<div class="check-number">
+CHECK 02
+</div>
+
+<h3>
+보험 보장이 중복되는지
+</h3>
+
+<p>
+여러 보험에 비슷한 보장이
+반복되어 있는지 살펴봅니다.
+</p>
+
+</div>
+
+
+
+<div class="check-card">
+
+<div class="check-number">
+CHECK 03
+</div>
+
+<h3>
+부족한 보장은 없는지
+</h3>
+
+<p>
+현재 가입 내용에서 필요한 보장이
+부족하지 않은지 확인합니다.
+</p>
+
+</div>
+
+
+
+<div class="check-card">
+
+<div class="check-number">
+CHECK 04
+</div>
+
+<h3>
+내 보험을 제대로 알고 있는지
+</h3>
+
+<p>
+가입한 보험의 주요 보장과 조건을
+쉽게 확인할 수 있도록 안내합니다.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
      PROBLEM
-================================================== -->
+========================= -->
 
 <section class="problem">
 
-  <div class="container">
+<div class="container">
 
 
-    <div class="section-title">
+<div class="section-title">
 
-      <div class="section-label">
-        FOR YOU
-      </div>
+<div class="section-label">
+FOR YOU
+</div>
 
-      <h2>
-        이런 분께 보험점검을 권해드립니다
-      </h2>
+<h2>
+이런 분께 보험점검을 권해드립니다
+</h2>
 
-      <p>
-        보험은 가입하는 것만큼 현재 상태를 확인하는 것도 중요합니다.
-      </p>
+<p>
+보험은 가입하는 것만큼 현재 상태를 확인하는 것도 중요합니다.
+</p>
 
-    </div>
-
-
-    <div class="problem-grid">
+</div>
 
 
-      <div class="problem-card">
-
-        <div class="icon">
-          📋
-        </div>
-
-        <h3>
-          가입한 보험이 너무 많아요
-        </h3>
-
-        <p>
-          여러 보험에 가입했지만 각각 어떤 보장이
-          있는지 잘 모르겠다면 확인해보세요.
-        </p>
-
-      </div>
+<div class="problem-grid">
 
 
+<div class="problem-card">
 
-      <div class="problem-card">
+<div class="icon">
+📋
+</div>
 
-        <div class="icon">
-          🔎
-        </div>
+<h3>
+가입한 보험이 너무 많아요
+</h3>
 
-        <h3>
-          내 보장이 충분한지 궁금해요
-        </h3>
+<p>
+여러 보험에 가입했지만 각각 어떤 보장이
+있는지 잘 모르겠다면 확인해보세요.
+</p>
 
-        <p>
-          현재 보험에서 필요한 보장이
-          잘 준비되어 있는지 점검해보세요.
-        </p>
-
-      </div>
+</div>
 
 
 
-      <div class="problem-card">
+<div class="problem-card">
 
-        <div class="icon">
-          💬
-        </div>
+<div class="icon">
+🔎
+</div>
 
-        <h3>
-          보험을 쉽게 설명받고 싶어요
-        </h3>
+<h3>
+내 보장이 충분한지 궁금해요
+</h3>
 
-        <p>
-          어려운 보험 내용을 이해하기 쉽게
-          안내받고 현재 가입 내용을 확인해보세요.
-        </p>
+<p>
+현재 보험에서 필요한 보장이
+잘 준비되어 있는지 점검해보세요.
+</p>
 
-      </div>
+</div>
 
 
-    </div>
 
-  </div>
+<div class="problem-card">
+
+<div class="icon">
+💬
+</div>
+
+<h3>
+보험을 쉽게 설명받고 싶어요
+</h3>
+
+<p>
+어려운 보험 내용을 이해하기 쉽게
+안내받고 현재 가입 내용을 확인해보세요.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
 
-<!-- ==================================================
-     SERVICES
-================================================== -->
+<!-- =========================
+     SERVICE
+========================= -->
 
 <section id="service">
 
-  <div class="container">
+<div class="container">
 
 
-    <div class="section-title">
+<div class="section-title">
 
-      <div class="section-label">
-        OUR SERVICE
-      </div>
+<div class="section-label">
+OUR SERVICE
+</div>
 
-      <h2>
-        보험점검 서비스
-      </h2>
+<h2>
+보험점검 서비스
+</h2>
 
-      <p>
-        현재 가입한 보험을 기준으로 필요한 내용을 차근차근 확인합니다.
-      </p>
+<p>
+현재 가입한 보험을 기준으로 필요한 내용을 차근차근 확인합니다.
+</p>
 
-    </div>
-
-
-    <div class="service-grid">
+</div>
 
 
-      <div class="service">
-
-        <div class="service-number">
-          SERVICE 01
-        </div>
-
-        <h3>
-          가입 보험 확인
-        </h3>
-
-        <p>
-          현재 가입되어 있는 보험과
-          주요 계약 내용을 확인합니다.
-        </p>
-
-      </div>
+<div class="service-grid">
 
 
+<div class="service">
 
-      <div class="service">
+<div class="service-number">
+SERVICE 01
+</div>
 
-        <div class="service-number">
-          SERVICE 02
-        </div>
+<h3>
+가입 보험 확인
+</h3>
 
-        <h3>
-          보장내용 분석
-        </h3>
+<p>
+현재 가입되어 있는 보험과
+주요 계약 내용을 확인합니다.
+</p>
 
-        <p>
-          보험별 주요 보장내용을 확인하고
-          이해하기 쉽게 안내합니다.
-        </p>
-
-      </div>
+</div>
 
 
 
-      <div class="service">
+<div class="service">
 
-        <div class="service-number">
-          SERVICE 03
-        </div>
+<div class="service-number">
+SERVICE 02
+</div>
 
-        <h3>
-          중복보장 확인
-        </h3>
+<h3>
+보장내용 분석
+</h3>
 
-        <p>
-          비슷하거나 중복되는 보장이
-          있는지 살펴봅니다.
-        </p>
+<p>
+보험별 주요 보장내용을 확인하고
+이해하기 쉽게 안내합니다.
+</p>
 
-      </div>
-
-
-
-      <div class="service">
-
-        <div class="service-number">
-          SERVICE 04
-        </div>
-
-        <h3>
-          부족한 보장 확인
-        </h3>
-
-        <p>
-          현재 보장에서 확인이 필요한 부분을
-          함께 살펴봅니다.
-        </p>
-
-      </div>
+</div>
 
 
 
-      <div class="service">
+<div class="service">
 
-        <div class="service-number">
-          SERVICE 05
-        </div>
+<div class="service-number">
+SERVICE 03
+</div>
 
-        <h3>
-          보험료 점검
-        </h3>
+<h3>
+중복보장 확인
+</h3>
 
-        <p>
-          현재 납입 보험료와
-          가입 내용을 함께 확인합니다.
-        </p>
+<p>
+비슷하거나 중복되는 보장이
+있는지 살펴봅니다.
+</p>
 
-      </div>
-
-
-
-      <div class="service">
-
-        <div class="service-number">
-          SERVICE 06
-        </div>
-
-        <h3>
-          맞춤 상담
-        </h3>
-
-        <p>
-          확인된 내용을 바탕으로
-          궁금한 부분을 상담해드립니다.
-        </p>
-
-      </div>
+</div>
 
 
-    </div>
 
-  </div>
+<div class="service">
+
+<div class="service-number">
+SERVICE 04
+</div>
+
+<h3>
+부족한 보장 확인
+</h3>
+
+<p>
+현재 보장에서 확인이 필요한 부분을
+함께 살펴봅니다.
+</p>
+
+</div>
+
+
+
+<div class="service">
+
+<div class="service-number">
+SERVICE 05
+</div>
+
+<h3>
+보험료 점검
+</h3>
+
+<p>
+현재 납입 보험료와
+가입 내용을 함께 확인합니다.
+</p>
+
+</div>
+
+
+
+<div class="service">
+
+<div class="service-number">
+SERVICE 06
+</div>
+
+<h3>
+맞춤 상담
+</h3>
+
+<p>
+확인된 내용을 바탕으로
+궁금한 부분을 상담해드립니다.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
 
-<!-- ==================================================
+<!-- =========================
      APPLICATION
-================================================== -->
+========================= -->
 
 <section
-  id="apply"
-  class="application"
+id="apply"
+class="application"
 >
 
-  <div class="container">
+<div class="container">
 
 
-    <div class="section-title">
+<div class="section-title">
 
-      <div class="section-label">
-        FREE CONSULTATION
-      </div>
+<div class="section-label">
+FREE CONSULTATION
+</div>
 
-      <h2>
-        보험점검 신청
-      </h2>
+<h2>
+보험점검 신청
+</h2>
 
-      <p>
-        간단한 정보를 남겨주시면 보험점검 상담을 안내해드립니다.
-      </p>
+<p>
+간단한 정보를 남겨주시면 보험점검 상담을 안내해드립니다.
+</p>
 
-    </div>
+</div>
 
 
-    <div class="application-box">
+<div class="application-box">
 
 
-      <div class="application-header">
+<div class="application-header">
 
-        <h3>
-          무료 보험점검 신청서
-        </h3>
+<h3>
+무료 보험점검 신청서
+</h3>
 
-        <p>
-          상담을 위해 필요한 최소한의 정보만 입력해주세요.
-        </p>
+<p>
+상담을 위해 필요한 최소한의 정보만 입력해주세요.
+</p>
 
-      </div>
+</div>
 
 
-      <!-- ==================================================
-           FORMSPREE
-      ================================================== -->
+<form
+action="https://formspree.io/f/mjyvnlqp"
+method="POST"
+>
 
-      <form
-        action="https://formspree.io/f/mjyvnlqp"
-        method="POST"
-      >
 
+<input
+type="hidden"
+name="subject"
+value="보험점검센터 보험점검 신청"
+/>
 
-        <input
-          type="hidden"
-          name="subject"
-          value="보험점검센터 보험점검 신청"
-        >
 
+<!-- 이름 -->
 
-        <!-- 이름 -->
+<div class="form-group">
 
-        <div class="form-group">
+<label for="name">
+이름
+</label>
 
-          <label for="name">
-            이름
-          </label>
+<input
+type="text"
+id="name"
+name="name"
+placeholder="이름을 입력해주세요"
+required
+>
 
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="이름을 입력해주세요"
-            required
-          >
+</div>
 
-        </div>
 
 
+<!-- 연락처 -->
 
-        <!-- 연락처 -->
+<div class="form-group">
 
-        <div class="form-group">
+<label for="phone">
+연락처
+</label>
 
-          <label for="phone">
-            연락처
-          </label>
+<input
+type="tel"
+id="phone"
+name="phone"
+placeholder="010-0000-0000"
+required
+>
 
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            placeholder="010-0000-0000"
-            required
-          >
+</div>
 
-        </div>
 
 
+<!-- 성별 -->
 
-        <!-- 성별 -->
+<div class="form-group">
 
-        <div class="form-group">
+<label>
+성별
+</label>
 
-          <label>
-            성별
-          </label>
 
+<div class="gender-group">
 
-          <div class="gender-group">
 
+<div class="gender-option">
 
-            <div class="gender-option">
+<input
+type="radio"
+id="male"
+name="gender"
+value="남성"
+required
+>
 
-              <input
-                type="radio"
-                id="male"
-                name="gender"
-                value="남성"
-                required
-              >
+<label for="male">
+남성
+</label>
 
-              <label for="male">
-                남성
-              </label>
+</div>
 
-            </div>
 
 
+<div class="gender-option">
 
-            <div class="gender-option">
+<input
+type="radio"
+id="female"
+name="gender"
+value="여성"
+>
 
-              <input
-                type="radio"
-                id="female"
-                name="gender"
-                value="여성"
-              >
+<label for="female">
+여성
+</label>
 
-              <label for="female">
-                여성
-              </label>
+</div>
 
-            </div>
 
+</div>
 
-          </div>
+</div>
 
-        </div>
 
 
+<!-- 나이 -->
 
-        <!-- 나이 -->
+<div class="form-group">
 
-        <div class="form-group">
+<label for="age">
+나이
+</label>
 
-          <label for="age">
-            나이
-          </label>
+<input
+type="number"
+id="age"
+name="age"
+min="1"
+max="120"
+placeholder="나이를 입력해주세요"
+required
+>
 
-          <input
-            type="number"
-            id="age"
-            name="age"
-            min="1"
-            max="120"
-            placeholder="나이를 입력해주세요"
-            required
-          >
+</div>
 
-        </div>
 
 
+<!-- 거주지 -->
 
-        <!-- 거주지 -->
+<div class="form-group">
 
-        <div class="form-group">
+<label for="location">
+거주지
+</label>
 
-          <label for="location">
-            거주지
-          </label>
 
+<select
+id="location"
+name="location"
+required
+>
 
-          <select
-            id="location"
-            name="location"
-            required
-          >
+<option value="">
+거주지를 선택해주세요
+</option>
 
-            <option value="">
-              거주지를 선택해주세요
-            </option>
+<option value="서울">서울</option>
 
-            <option value="서울">
-              서울
-            </option>
+<option value="경기">경기</option>
 
-            <option value="경기">
-              경기
-            </option>
+<option value="인천">인천</option>
 
-            <option value="인천">
-              인천
-            </option>
+<option value="부산">부산</option>
 
-            <option value="부산">
-              부산
-            </option>
+<option value="대구">대구</option>
 
-            <option value="대구">
-              대구
-            </option>
+<option value="광주">광주</option>
 
-            <option value="광주">
-              광주
-            </option>
+<option value="대전">대전</option>
 
-            <option value="대전">
-              대전
-            </option>
+<option value="울산">울산</option>
 
-            <option value="울산">
-              울산
-            </option>
+<option value="세종">세종</option>
 
-            <option value="세종">
-              세종
-            </option>
+<option value="강원">강원</option>
 
-            <option value="강원">
-              강원
-            </option>
+<option value="충북">충북</option>
 
-            <option value="충북">
-              충북
-            </option>
+<option value="충남">충남</option>
 
-            <option value="충남">
-              충남
-            </option>
+<option value="전북">전북</option>
 
-            <option value="전북">
-              전북
-            </option>
+<option value="전남">전남</option>
 
-            <option value="전남">
-              전남
-            </option>
+<option value="경북">경북</option>
 
-            <option value="경북">
-              경북
-            </option>
+<option value="경남">경남</option>
 
-            <option value="경남">
-              경남
-            </option>
+<option value="제주">제주</option>
 
-            <option value="제주">
-              제주
-            </option>
+</select>
 
-          </select>
+</div>
 
-        </div>
 
 
+<!-- 개인정보 -->
 
-        <!-- 개인정보 동의 -->
+<div class="agree-box">
 
-        <div class="agree-box">
+<label>
 
-          <label>
+<input
+type="checkbox"
+name="privacy_agree"
+value="동의"
+required
+>
 
-            <input
-              type="checkbox"
-              name="privacy_agree"
-              value="동의"
-              required
-            >
+<span>
 
-            <span>
+보험점검 상담을 위한
+개인정보 수집 및 이용에 동의합니다.
+입력하신 정보는 상담 목적으로 사용됩니다.
 
-              보험점검 상담을 위한
-              개인정보 수집 및 이용에 동의합니다.
-              입력하신 정보는 상담 목적으로 사용됩니다.
+</span>
 
-            </span>
+</label>
 
-          </label>
+</div>
 
-        </div>
 
 
+<button
+type="submit"
+class="submit-btn"
+>
 
-        <!-- 신청 버튼 -->
+보험점검 신청하기
 
-        <button
-          type="submit"
-          class="submit-btn"
-        >
+</button>
 
-          보험점검 신청하기
 
-        </button>
+</form>
 
+</div>
 
-      </form>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
 
-<!-- ==================================================
+<!-- =========================
      PROCESS
-================================================== -->
+========================= -->
 
-<section
-  id="process"
-  class="process"
->
+<section id="process">
 
-  <div class="container">
+<div class="container">
 
 
-    <div class="section-title">
+<div class="section-title">
 
-      <div class="section-label">
-        PROCESS
-      </div>
+<div class="section-label">
+PROCESS
+</div>
 
-      <h2>
-        보험점검 진행과정
-      </h2>
+<h2>
+보험점검 진행과정
+</h2>
 
-      <p>
-        복잡하지 않습니다. 순서대로 차근차근 진행합니다.
-      </p>
+<p>
+복잡하지 않습니다. 순서대로 차근차근 진행합니다.
+</p>
 
-    </div>
-
-
-    <div class="process-grid">
+</div>
 
 
-      <div class="process-card">
+<div class="process-grid">
 
-        <div class="step">
-          1
-        </div>
 
-        <h3>
-          상담 신청
-        </h3>
+<div class="process-card">
 
-        <p>
-          전화 또는 신청서를 통해
-          상담을 신청합니다.
-        </p>
+<div class="step">
+1
+</div>
 
-      </div>
+<h3>
+상담 신청
+</h3>
+
+<p>
+전화 또는 신청서를 통해
+상담을 신청합니다.
+</p>
+
+</div>
 
 
 
-      <div class="process-card">
+<div class="process-card">
 
-        <div class="step">
-          2
-        </div>
+<div class="step">
+2
+</div>
 
-        <h3>
-          보험 확인
-        </h3>
+<h3>
+보험 확인
+</h3>
 
-        <p>
-          현재 가입한 보험 내용을
-          확인합니다.
-        </p>
+<p>
+현재 가입한 보험 내용을
+확인합니다.
+</p>
 
-      </div>
-
-
-
-      <div class="process-card">
-
-        <div class="step">
-          3
-        </div>
-
-        <h3>
-          보장 점검
-        </h3>
-
-        <p>
-          보장내용과 중복 및 부족한
-          부분을 살펴봅니다.
-        </p>
-
-      </div>
+</div>
 
 
 
-      <div class="process-card">
+<div class="process-card">
 
-        <div class="step">
-          4
-        </div>
+<div class="step">
+3
+</div>
 
-        <h3>
-          상담 안내
-        </h3>
+<h3>
+보장 점검
+</h3>
 
-        <p>
-          확인된 내용을 바탕으로
-          궁금한 점을 안내합니다.
-        </p>
+<p>
+보장내용과 중복 및 부족한
+부분을 살펴봅니다.
+</p>
 
-      </div>
+</div>
 
 
-    </div>
 
-  </div>
+<div class="process-card">
+
+<div class="step">
+4
+</div>
+
+<h3>
+상담 안내
+</h3>
+
+<p>
+확인된 내용을 바탕으로
+궁금한 점을 안내합니다.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
 
-<!-- ==================================================
+<!-- =========================
      CTA
-================================================== -->
+========================= -->
 
 <section
-  id="contact"
-  class="cta"
+id="contact"
+class="cta"
 >
 
-  <div class="container">
+<div class="container">
 
 
-    <div class="cta-box">
-
-      <h2>
-        내 보험, 한번 점검해보세요.
-      </h2>
-
-      <p>
-
-        지금 가입한 보험이 어떤 상태인지<br>
-
-        편하게 상담받아보세요.
-
-      </p>
+<div class="cta-box">
 
 
-      <a
-        class="cta-phone"
-        href="tel:01086462117"
-      >
+<h2>
+내 보험, 한번 점검해보세요.
+</h2>
 
-        010-8646-2117
 
-      </a>
+<p>
 
-    </div>
+보험설계사 신요섭과 함께<br>
 
-  </div>
+현재 가입한 보험 내용을 편하게 확인해보세요.
+
+</p>
+
+
+<a
+href="tel:01086462117"
+class="cta-phone"
+>
+
+010-8646-2117
+
+</a>
+
+
+</div>
+
+</div>
 
 </section>
 
@@ -2339,63 +2645,68 @@ footer p {
 
 
 
-<!-- ==================================================
+<!-- =========================
      FOOTER
-================================================== -->
+========================= -->
 
 <footer>
 
-  <div class="container">
+<div class="container">
 
 
-    <div class="footer-logo">
-      보험점검센터
-    </div>
+<div class="footer-logo">
+보험점검센터
+</div>
 
 
-    <p>
-      상담전화 : 010-8646-2117
-    </p>
+<div class="footer-name">
+보험설계사 신요섭
+</div>
 
 
-    <p>
-
-      본 홈페이지는 보험 관련 일반적인 정보를 제공하며,
-      구체적인 계약 내용은 보험증권 및 보험회사 확인이 필요합니다.
-
-    </p>
+<p>
+상담전화 : 010-8646-2117
+</p>
 
 
-    <p>
-      © 보험점검센터. All rights reserved.
-    </p>
+<p>
+
+본 홈페이지는 보험 관련 일반적인 정보를 제공하며,
+구체적인 계약 내용은 보험증권 및 보험회사 확인이 필요합니다.
+
+</p>
 
 
-  </div>
+<p>
+© 보험점검센터. All rights reserved.
+</p>
+
+
+</div>
 
 </footer>
 
 
 
-<!-- ==================================================
-     KAKAO TALK
-================================================== -->
+<!-- =========================
+     KAKAO
+========================= -->
 
 <a
-  href="https://open.kakao.com/o/sUxshkKi"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="kakao-floating"
-  aria-label="카카오톡 상담하기"
+href="https://open.kakao.com/o/sUxshkKi"
+target="_blank"
+rel="noopener noreferrer"
+class="kakao-floating"
+aria-label="카카오톡 상담하기"
 >
 
-  <span class="kakao-icon">
-    💬
-  </span>
+<span class="kakao-icon">
+💬
+</span>
 
-  <span>
-    카카오톡 상담
-  </span>
+<span>
+카카오톡 상담
+</span>
 
 </a>
 
