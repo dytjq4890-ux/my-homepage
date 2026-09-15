@@ -31,15 +31,19 @@
   <!-- SNS 공유 최적화 -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="보험점검센터 | 보험점검·보장분석">
+
   <meta
     property="og:description"
     content="가입한 보험의 보장내용과 보험료, 중복보장 및 부족한 보장을 점검해보세요."
   >
+
   <meta property="og:locale" content="ko_KR">
 
-<meta name="naver-site-verification" content="9859fc43acc82f50ca00890a47f780a6c5c367" />
-  
-</head>
+  <!-- 네이버 사이트 소유확인 -->
+  <meta
+    name="naver-site-verification"
+    content="9859fc43acc82f50ca00890a47f780a6c5c367"
+  >
 
 <style>
 
@@ -1329,13 +1333,44 @@ footer p {
 
 
 /* =========================
-   모바일
+   태블릿 / 모바일
 ========================= */
 
 @media (max-width: 900px) {
 
+  .header-inner {
+
+    flex-wrap: wrap;
+
+    padding: 10px 0;
+  }
+
   nav {
-    display: none;
+
+    order: 3;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    overflow-x: auto;
+
+    white-space: nowrap;
+
+    padding: 5px 0 8px;
+
+    font-size: 13px;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  nav a {
+
+    flex-shrink: 0;
   }
 
   .check-grid {
@@ -2284,8 +2319,6 @@ value="보험점검센터 보험점검 신청"
 />
 
 
-<!-- 이름 -->
-
 <div class="form-group">
 
 <label for="name">
@@ -2304,8 +2337,6 @@ required
 
 
 
-<!-- 연락처 -->
-
 <div class="form-group">
 
 <label for="phone">
@@ -2323,8 +2354,6 @@ required
 </div>
 
 
-
-<!-- 성별 -->
 
 <div class="form-group">
 
@@ -2376,8 +2405,6 @@ value="여성"
 
 
 
-<!-- 나이 -->
-
 <div class="form-group">
 
 <label for="age">
@@ -2398,8 +2425,6 @@ required
 
 
 
-<!-- 거주지 -->
-
 <div class="form-group">
 
 <label for="location">
@@ -2418,37 +2443,21 @@ required
 </option>
 
 <option value="서울">서울</option>
-
 <option value="경기">경기</option>
-
 <option value="인천">인천</option>
-
 <option value="부산">부산</option>
-
 <option value="대구">대구</option>
-
 <option value="광주">광주</option>
-
 <option value="대전">대전</option>
-
 <option value="울산">울산</option>
-
 <option value="세종">세종</option>
-
 <option value="강원">강원</option>
-
 <option value="충북">충북</option>
-
 <option value="충남">충남</option>
-
 <option value="전북">전북</option>
-
 <option value="전남">전남</option>
-
 <option value="경북">경북</option>
-
 <option value="경남">경남</option>
-
 <option value="제주">제주</option>
 
 </select>
@@ -2456,8 +2465,6 @@ required
 </div>
 
 
-
-<!-- 개인정보 -->
 
 <div class="agree-box">
 
