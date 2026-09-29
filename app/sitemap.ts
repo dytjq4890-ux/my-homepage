@@ -1,61 +1,96 @@
-import type { MetadataRoute } from "next";
+import type {
+  MetadataRoute,
+} from "next";
 
-const SITE_URL =
-  "https://my-homepage-red-theta.vercel.app";
+import {
+  REGION_DATA,
+  SITE_URL,
+} from "./region/data";
 
-const districts = [
-  "gangnam",
-  "gangdong",
-  "gangbuk",
-  "gangseo",
-  "gwanak",
-  "gwangjin",
-  "guro",
-  "geumcheon",
-  "nowon",
-  "dobong",
-  "dongdaemun",
-  "dongjak",
-  "mapo",
-  "seodaemun",
-  "seocho",
-  "seongdong",
-  "seongbuk",
-  "songpa",
-  "yangcheon",
-  "yeongdeungpo",
-  "yongsan",
-  "eunpyeong",
-  "jongno",
-  "jung",
-  "jungnang",
-];
+export default function sitemap():
+  MetadataRoute.Sitemap {
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  const now =
+    new Date();
 
-  const districtPages: MetadataRoute.Sitemap =
-    districts.map((district) => ({
-      url: `${SITE_URL}/region/seoul/${district}`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    }));
+  const regionPages:
+    MetadataRoute.Sitemap =
+    Object.keys(
+      REGION_DATA
+    ).map(
+      (region) => ({
+        url:
+          `${SITE_URL}/region/${region}`,
+
+        lastModified:
+          now,
+
+        changeFrequency:
+          "weekly",
+
+        priority:
+          0.9,
+      })
+    );
+
+  const districtPages:
+    MetadataRoute.Sitemap =
+    Object.entries(
+      REGION_DATA
+    ).flatMap(
+      ([
+        region,
+        data,
+      ]) =>
+        Object.keys(
+          data.districts
+        ).map(
+          (district) => ({
+            url:
+              `${SITE_URL}/region/${region}/${district}`,
+
+            lastModified:
+              now,
+
+            changeFrequency:
+              "monthly",
+
+            priority:
+              0.8,
+          })
+        )
+    );
 
   return [
     {
-      url: SITE_URL,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 1,
+      url:
+        SITE_URL,
+
+      lastModified:
+        now,
+
+      changeFrequency:
+        "weekly",
+
+      priority:
+        1,
     },
 
     {
-      url: `${SITE_URL}/region/seoul`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
+      url:
+        `${SITE_URL}/region`,
+
+      lastModified:
+        now,
+
+      changeFrequency:
+        "weekly",
+
+      priority:
+        0.9,
     },
+
+    ...regionPages,
 
     ...districtPages,
   ];
