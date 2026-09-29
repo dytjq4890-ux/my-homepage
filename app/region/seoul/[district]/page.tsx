@@ -5,6 +5,10 @@ import { notFound } from "next/navigation";
 const SITE_URL =
   "https://my-homepage-red-theta.vercel.app";
 
+/* =====================================
+   서울 25개 구
+===================================== */
+
 const districts = {
   gangnam: "강남구",
   gangdong: "강동구",
@@ -41,11 +45,19 @@ type Props = {
   }>;
 };
 
+/* =====================================
+   서울 25개 페이지 자동 생성
+===================================== */
+
 export function generateStaticParams() {
   return Object.keys(districts).map((district) => ({
     district,
   }));
 }
+
+/* =====================================
+   지역별 SEO 자동 생성
+===================================== */
 
 export async function generateMetadata({
   params,
@@ -53,26 +65,33 @@ export async function generateMetadata({
   const { district } = await params;
 
   if (!(district in districts)) {
-    return {};
+    return {
+      title: "지역을 찾을 수 없습니다",
+    };
   }
 
   const districtName =
     districts[district as DistrictSlug];
 
   return {
-    title: `${districtName} 보험점검 | 보험 보장분석 상담`,
+    title: {
+      absolute:
+        `${districtName} 보험점검 | 보험 보장분석 상담`,
+    },
 
     description:
       `${districtName} 보험점검 및 보험 보장분석 안내. ` +
-      `현재 가입한 보험의 보장내용, 중복보장, ` +
-      `부족할 수 있는 보장 등을 확인해보세요.`,
+      `현재 가입한 보험의 보장내용, 중복되는 보장, ` +
+      `부족할 수 있는 보장 항목 등을 확인해보세요.`,
 
     keywords: [
       `${districtName}보험점검`,
       `${districtName}보험상담`,
       `${districtName}보험분석`,
       `${districtName}보장분석`,
+      `${districtName}보험리모델링`,
       "보험점검",
+      "보험상담",
       "보험보장분석",
     ],
 
@@ -85,13 +104,17 @@ export async function generateMetadata({
       title:
         `${districtName} 보험점검 | 보험 보장분석`,
       description:
-        `${districtName} 지역 보험점검 및 보장분석 안내`,
+        `${districtName} 지역 보험점검 및 보험 보장분석 안내`,
       url:
         `${SITE_URL}/region/seoul/${district}`,
       type: "website",
     },
   };
 }
+
+/* =====================================
+   지역구 페이지
+===================================== */
 
 export default async function DistrictPage({
   params,
@@ -107,6 +130,8 @@ export default async function DistrictPage({
 
   return (
     <>
+      {/* 상단 */}
+
       <header
         style={{
           background: "#ffffff",
@@ -119,17 +144,17 @@ export default async function DistrictPage({
             margin: "0 auto",
             padding: "18px 20px",
             display: "flex",
-            justifyContent: "space-between",
             alignItems: "center",
+            justifyContent: "space-between",
           }}
         >
           <Link
             href="/"
             style={{
-              fontSize: "21px",
-              fontWeight: 800,
-              textDecoration: "none",
               color: "#111827",
+              textDecoration: "none",
+              fontWeight: 800,
+              fontSize: "21px",
             }}
           >
             보험점검
@@ -139,64 +164,106 @@ export default async function DistrictPage({
             href="/region/seoul"
             style={{
               color: "#2563eb",
-              fontWeight: 700,
               textDecoration: "none",
+              fontWeight: 700,
+              fontSize: "14px",
             }}
           >
-            서울 지역목록
+            서울 다른 지역 보기
           </Link>
         </div>
       </header>
 
+      {/* 메인 */}
+
       <section
         style={{
+          padding: "70px 20px",
+          textAlign: "center",
+          color: "#ffffff",
           background:
             "linear-gradient(135deg, #2563eb, #1d4ed8)",
-          color: "#ffffff",
-          textAlign: "center",
-          padding: "70px 20px",
         }}
       >
-        <h1
+        <div
           style={{
-            fontSize: "38px",
-            margin: "0 0 12px",
+            maxWidth: "850px",
+            margin: "0 auto",
           }}
         >
-          {districtName} 보험점검
-        </h1>
+          <div
+            style={{
+              display: "inline-block",
+              padding: "7px 15px",
+              marginBottom: "18px",
+              background:
+                "rgba(255,255,255,0.15)",
+              border:
+                "1px solid rgba(255,255,255,0.3)",
+              borderRadius: "999px",
+              fontSize: "14px",
+              fontWeight: 700,
+            }}
+          >
+            서울 {districtName}
+          </div>
 
-        <p
-          style={{
-            margin: 0,
-            fontSize: "17px",
-          }}
-        >
-          {districtName} 지역 보험 보장분석 안내
-        </p>
+          <h1
+            style={{
+              margin: "0 0 12px",
+              fontSize: "38px",
+              lineHeight: 1.3,
+            }}
+          >
+            {districtName} 보험점검
+          </h1>
+
+          <p
+            style={{
+              margin: 0,
+              fontSize: "17px",
+              lineHeight: 1.7,
+              opacity: 0.95,
+            }}
+          >
+            {districtName} 지역
+            보험 보장분석 안내
+          </p>
+        </div>
       </section>
 
       <main
         style={{
           maxWidth: "960px",
           margin: "0 auto",
-          padding: "48px 20px",
+          padding: "48px 20px 70px",
         }}
       >
         <section
           style={{
+            marginBottom: "20px",
+            padding: "30px",
             background: "#ffffff",
             border: "1px solid #e5e7eb",
             borderRadius: "18px",
-            padding: "30px",
-            marginBottom: "20px",
+            boxShadow:
+              "0 5px 18px rgba(0,0,0,0.04)",
           }}
         >
-          <h2>
+          <h2
+            style={{
+              marginTop: 0,
+            }}
+          >
             {districtName} 보험점검 안내
           </h2>
 
-          <p>
+          <p
+            style={{
+              lineHeight: 1.8,
+              color: "#4b5563",
+            }}
+          >
             현재 가입하고 있는 보험을 기준으로
             주요 보장내용과 중복되는 보장,
             부족할 수 있는 보장 항목 등을
@@ -207,49 +274,100 @@ export default async function DistrictPage({
             style={{
               display: "grid",
               gap: "12px",
-              marginTop: "20px",
+              marginTop: "22px",
             }}
           >
-            {[
-              "현재 가입 중인 보험의 주요 보장내용 확인",
-              "비슷한 보장이 여러 계약에 중복되어 있는지 확인",
-              "현재 계약에서 부족할 수 있는 보장 항목 확인",
-              "월 보험료와 보장내용을 함께 확인",
-            ].map((text, index) => (
-              <div
-                key={text}
-                style={{
-                  padding: "16px",
-                  background: "#f8fafc",
-                  borderRadius: "12px",
-                }}
+            <div
+              style={{
+                padding: "16px",
+                background: "#f8fafc",
+                borderRadius: "12px",
+              }}
+            >
+              <strong
+                style={{ color: "#2563eb" }}
               >
-                <strong
-                  style={{
-                    color: "#2563eb",
-                  }}
-                >
-                  {String(index + 1).padStart(2, "0")}.
-                </strong>{" "}
-                {text}
-              </div>
-            ))}
+                01.
+              </strong>{" "}
+              현재 가입 중인 보험의
+              주요 보장내용 확인
+            </div>
+
+            <div
+              style={{
+                padding: "16px",
+                background: "#f8fafc",
+                borderRadius: "12px",
+              }}
+            >
+              <strong
+                style={{ color: "#2563eb" }}
+              >
+                02.
+              </strong>{" "}
+              비슷한 보장이 여러 계약에
+              중복되어 있는지 확인
+            </div>
+
+            <div
+              style={{
+                padding: "16px",
+                background: "#f8fafc",
+                borderRadius: "12px",
+              }}
+            >
+              <strong
+                style={{ color: "#2563eb" }}
+              >
+                03.
+              </strong>{" "}
+              현재 계약에서 부족할 수 있는
+              보장 항목 확인
+            </div>
+
+            <div
+              style={{
+                padding: "16px",
+                background: "#f8fafc",
+                borderRadius: "12px",
+              }}
+            >
+              <strong
+                style={{ color: "#2563eb" }}
+              >
+                04.
+              </strong>{" "}
+              월 보험료와 보장내용을
+              함께 확인
+            </div>
           </div>
         </section>
 
         <section
           style={{
+            padding: "30px",
             background: "#ffffff",
             border: "1px solid #e5e7eb",
             borderRadius: "18px",
-            padding: "30px",
+            boxShadow:
+              "0 5px 18px rgba(0,0,0,0.04)",
           }}
         >
-          <h2>
-            {districtName} 보험상담 전 확인사항
+          <h2
+            style={{
+              marginTop: 0,
+            }}
+          >
+            {districtName} 보험상담 전
+            확인사항
           </h2>
 
-          <p>
+          <p
+            style={{
+              lineHeight: 1.8,
+              color: "#4b5563",
+            }}
+          >
             가입 중인 보험회사,
             월 납입 보험료,
             보험 가입 시기,
@@ -267,10 +385,11 @@ export default async function DistrictPage({
               borderRadius: "12px",
               color: "#7c2d12",
               fontSize: "14px",
+              lineHeight: 1.7,
             }}
           >
             보험 상품의 가입·변경·해지는
-            개인 상황과 계약 조건에 따라
+            개인의 상황과 계약 조건에 따라
             달라질 수 있습니다.
             기존 보험을 변경하거나 해지하기 전에는
             현재 계약의 보장내용,
@@ -278,8 +397,38 @@ export default async function DistrictPage({
             가입 가능 여부 등을
             반드시 확인하시기 바랍니다.
           </div>
+
+          <Link
+            href="/region/seoul"
+            style={{
+              display: "inline-block",
+              marginTop: "24px",
+              padding: "14px 20px",
+              background: "#2563eb",
+              color: "#ffffff",
+              borderRadius: "12px",
+              textDecoration: "none",
+              fontWeight: 800,
+            }}
+          >
+            서울 다른 지역 보기
+          </Link>
         </section>
       </main>
+
+      <footer
+        style={{
+          padding: "32px 20px",
+          background: "#111827",
+          color: "#d1d5db",
+          textAlign: "center",
+          fontSize: "13px",
+        }}
+      >
+        보험점검 사이트
+        <br />
+        {districtName} 보험 보장분석 정보
+      </footer>
     </>
   );
 }
