@@ -6,10 +6,10 @@ import {
 } from "./region/data";
 
 const KAKAO_URL =
-  "https://open.kakao.com/o/sDHKtQJi";
+  "https://open.kakao.com/o/sUxshkKi";
 
 const PROFILE_IMAGE =
-  "/profile.png";
+  "/IMG_1221.png";
 
 const regions = [
   {
@@ -82,9 +82,12 @@ export default function Home() {
           position: "sticky",
           top: 0,
           zIndex: 50,
-          background: "rgba(255,255,255,0.96)",
-          borderBottom: "1px solid #e5e7eb",
-          backdropFilter: "blur(10px)",
+          background:
+            "rgba(255,255,255,0.96)",
+          borderBottom:
+            "1px solid #e5e7eb",
+          backdropFilter:
+            "blur(10px)",
         }}
       >
         <div
@@ -93,7 +96,8 @@ export default function Home() {
             margin: "0 auto",
             padding: "15px 20px",
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent:
+              "space-between",
             alignItems: "center",
             gap: "10px",
           }}
@@ -151,7 +155,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* 히어로 */}
+      {/* 메인 히어로 */}
 
       <section
         style={{
@@ -181,7 +185,8 @@ export default function Home() {
                 padding: "8px 15px",
                 marginBottom: "18px",
                 borderRadius: "999px",
-                background: "rgba(255,255,255,0.15)",
+                background:
+                  "rgba(255,255,255,0.15)",
                 border:
                   "1px solid rgba(255,255,255,0.2)",
                 fontWeight: 800,
@@ -202,8 +207,7 @@ export default function Home() {
             >
               내 보험,
               <br />
-              제대로
-              확인해보세요
+              제대로 확인해보세요
             </h1>
 
             <p
@@ -265,7 +269,8 @@ export default function Home() {
 
           <div
             style={{
-              background: "rgba(255,255,255,0.12)",
+              background:
+                "rgba(255,255,255,0.12)",
               border:
                 "1px solid rgba(255,255,255,0.2)",
               borderRadius: "28px",
@@ -282,17 +287,20 @@ export default function Home() {
                 margin: "0 auto 20px",
                 borderRadius: "50%",
                 overflow: "hidden",
-                border: "5px solid #ffffff",
+                border:
+                  "5px solid #ffffff",
                 background: "#ffffff",
               }}
             >
               <img
                 src={PROFILE_IMAGE}
-                alt="보험점검 상담"
+                alt="보험점검 상담 프로필"
                 style={{
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
+                  objectPosition:
+                    "center top",
                 }}
               />
             </div>
@@ -356,7 +364,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 보험점검 항목 */}
+      {/* 점검 항목 */}
 
       <section
         style={{
@@ -448,7 +456,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 지역 */}
+      {/* 지역별 */}
 
       <section
         style={{
@@ -483,8 +491,7 @@ export default function Home() {
                 marginBottom: "10px",
               }}
             >
-              원하는 지역을
-              선택하세요
+              원하는 지역을 선택하세요
             </h2>
 
             <p
@@ -635,20 +642,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 안내 */}
+      {/* 안내문 */}
 
       <section
         style={{
           maxWidth: "950px",
           margin: "0 auto",
-          padding: "0 20px 70px",
+          padding:
+            "0 20px 70px",
         }}
       >
         <div
           style={{
             padding: "20px",
             background: "#fff7ed",
-            border: "1px solid #fed7aa",
+            border:
+              "1px solid #fed7aa",
             borderRadius: "16px",
             color: "#7c2d12",
             fontSize: "14px",
@@ -666,7 +675,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 푸터 */}
+      {/* 하단 */}
 
       <footer
         style={{
