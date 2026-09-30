@@ -3,7 +3,7 @@ export const PHONE_DISPLAY = "010-8646-2117";
 export const PHONE_LINK = `tel:${PHONE}`;
 
 export const SITE_URL =
-  "https://my-homepage-red-theta.vercel.app";
+  "https://bohumreport.com";
 
 export const REGION_DATA = {
   seoul: {
