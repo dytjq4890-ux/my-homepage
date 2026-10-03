@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL =
-  "https://my-homepage-red-theta.vercel.app";
+const SITE_URL = "https://bohumreport.com";
 
 export default function robots(): MetadataRoute.Robots {
   return {
