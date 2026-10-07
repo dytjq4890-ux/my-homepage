@@ -37,6 +37,22 @@ export function generateStaticParams() {
 }
 
 /* =====================================
+   지역명 SEO 보정
+   예:
+   영등포구 → 영등포
+   강남구 → 강남
+   마포구 → 마포
+===================================== */
+
+function getShortDistrictName(
+  districtName: string
+) {
+  return districtName.endsWith("구")
+    ? districtName.slice(0, -1)
+    : districtName;
+}
+
+/* =====================================
    지역별 SEO 자동 생성
 ===================================== */
 
@@ -65,24 +81,47 @@ export async function generateMetadata({
   const districtName =
     districts[district];
 
+  const shortDistrictName =
+    getShortDistrictName(
+      districtName
+    );
+
   return {
     title: {
       absolute:
-        `${districtName} 보험점검 | 보험 보장분석 상담`,
+        `${shortDistrictName} 보험점검 | ${districtName} 보험점검 | 보험 보장분석 상담`,
     },
 
     description:
-      `${districtName} 보험점검 및 보험 보장분석 안내. ` +
+      `${shortDistrictName} 보험점검 및 ${districtName} 보험점검, ` +
+      `${shortDistrictName} 보험상담과 ${districtName} 보험상담을 안내합니다. ` +
       `현재 가입한 보험의 보장내용, 중복보장, 부족할 수 있는 보장 등을 확인해보세요.`,
 
     keywords: [
+      `${shortDistrictName} 보험점검`,
       `${districtName} 보험점검`,
+
+      `${shortDistrictName} 보험상담`,
       `${districtName} 보험상담`,
+
+      `${shortDistrictName} 보험분석`,
       `${districtName} 보험분석`,
+
+      `${shortDistrictName} 보장분석`,
       `${districtName} 보장분석`,
-      `${regionData.name} 보험점검`,
+
+      `${shortDistrictName} 보험료점검`,
+      `${districtName} 보험료점검`,
+
+      `${regionData.name} ${shortDistrictName} 보험점검`,
+      `${regionData.name} ${districtName} 보험점검`,
+
+      `${regionData.name} ${shortDistrictName} 보험상담`,
+      `${regionData.name} ${districtName} 보험상담`,
+
       "보험점검",
       "보험상담",
+      "보험분석",
       "보험 보장분석",
     ],
 
@@ -93,9 +132,9 @@ export async function generateMetadata({
 
     openGraph: {
       title:
-        `${districtName} 보험점검 | 보험 보장분석`,
+        `${shortDistrictName} 보험점검 | ${districtName} 보험점검 | 보험 보장분석`,
       description:
-        `${districtName} 지역 보험점검 및 보험상담 안내`,
+        `${shortDistrictName} 보험점검 및 ${districtName} 보험상담 안내`,
       url:
         `${SITE_URL}/region/${region}/${district}`,
       type: "website",
@@ -132,6 +171,11 @@ export default async function DistrictPage({
 
   const districtName =
     districts[district];
+
+  const shortDistrictName =
+    getShortDistrictName(
+      districtName
+    );
 
   return (
     <>
@@ -229,7 +273,7 @@ export default async function DistrictPage({
                 "-1.5px",
             }}
           >
-            {districtName}
+            {shortDistrictName}
             {" "}
             보험점검
           </h1>
@@ -242,9 +286,9 @@ export default async function DistrictPage({
               opacity: 0.95,
             }}
           >
-            {districtName}
+            {shortDistrictName}
             {" "}
-            지역 보험 보장분석 안내
+            {districtName} 지역 보험 보장분석 안내
           </p>
 
           {/* 상단 상담 버튼 */}
@@ -337,7 +381,7 @@ export default async function DistrictPage({
               fontSize: "28px",
             }}
           >
-            {districtName}
+            {shortDistrictName}
             {" "}
             보험점검 안내
           </h2>
@@ -349,14 +393,12 @@ export default async function DistrictPage({
               fontSize: "17px",
             }}
           >
-            현재 가입하고 있는
-            보험을 기준으로
-            주요 보장내용과
-            중복되는 보장,
-            부족할 수 있는
-            보장 항목 등을
-            확인할 수 있도록
-            안내합니다.
+            {shortDistrictName} 보험점검 및{" "}
+            {districtName} 보험점검을 통해
+            현재 가입하고 있는 보험을 기준으로
+            주요 보장내용과 중복되는 보장,
+            부족할 수 있는 보장 항목 등을
+            확인할 수 있도록 안내합니다.
           </p>
 
           <div
@@ -413,6 +455,71 @@ export default async function DistrictPage({
           </div>
         </section>
 
+        {/* 보험상담 안내 */}
+
+        <section
+          style={{
+            padding: "30px",
+            marginBottom: "20px",
+            background:
+              "#ffffff",
+            border:
+              "1px solid #e5e7eb",
+            borderRadius:
+              "18px",
+            boxShadow:
+              "0 6px 20px rgba(15,23,42,0.04)",
+          }}
+        >
+          <div
+            style={{
+              color:
+                "#2563eb",
+              fontWeight:
+                900,
+              fontSize:
+                "14px",
+              marginBottom:
+                "8px",
+            }}
+          >
+            INSURANCE CHECK
+          </div>
+
+          <h2
+            style={{
+              margin:
+                "0 0 16px",
+              fontSize:
+                "28px",
+            }}
+          >
+            {shortDistrictName}
+            {" "}
+            보험상담
+          </h2>
+
+          <p
+            style={{
+              color:
+                "#4b5563",
+              lineHeight:
+                1.8,
+              marginBottom:
+                "25px",
+            }}
+          >
+            {shortDistrictName} 보험상담 및{" "}
+            {districtName} 보험상담을 통해
+            가입 중인 보험회사,
+            월 납입 보험료,
+            보험 가입 시기,
+            주요 보장내용 등을
+            확인하고 보험 보장분석에
+            도움을 받을 수 있습니다.
+          </p>
+        </section>
+
         {/* 상담 안내 */}
 
         <section
@@ -451,7 +558,7 @@ export default async function DistrictPage({
                 "28px",
             }}
           >
-            {districtName}
+            {shortDistrictName}
             {" "}
             보험점검 상담
           </h2>
@@ -698,9 +805,15 @@ export default async function DistrictPage({
 
         <br />
 
-        {districtName}
+        {shortDistrictName}
         {" "}
-        보험 보장분석 안내
+        {districtName} 보험 보장분석 안내
+
+        <br />
+
+        {shortDistrictName}
+        {" "}
+        보험상담
 
         <br />
 
