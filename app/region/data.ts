@@ -141,3 +141,130 @@ export const REGION_DATA = {
 
 export type RegionSlug =
   keyof typeof REGION_DATA;
+
+
+/* =====================================
+   지역명 검색어 자동 생성
+===================================== */
+
+/**
+ * 지역명에서 사람들이 실제 검색할 수 있는
+ * 자연스러운 지역명 형태를 자동으로 생성합니다.
+ *
+ * 예:
+ * 영등포구
+ * → 영등포
+ * → 영등포구
+ *
+ * 수원시
+ * → 수원
+ * → 수원시
+ *
+ * 강화군
+ * → 강화
+ * → 강화군
+ */
+export function getDistrictSearchNames(
+  districtName: string
+) {
+  const shortName =
+    districtName.endsWith("구") ||
+    districtName.endsWith("시") ||
+    districtName.endsWith("군")
+      ? districtName.slice(0, -1)
+      : districtName;
+
+  return {
+    shortName,
+    fullName: districtName,
+  };
+}
+
+
+/* =====================================
+   지역 SEO 검색어 자동 생성
+===================================== */
+
+export function getDistrictSearchTerms(
+  districtName: string,
+  regionName: string
+) {
+  const {
+    shortName,
+    fullName,
+  } = getDistrictSearchNames(
+    districtName
+  );
+
+  return [
+    `${shortName} 보험점검`,
+    `${fullName} 보험점검`,
+
+    `${shortName} 보험상담`,
+    `${fullName} 보험상담`,
+
+    `${shortName} 보험분석`,
+    `${fullName} 보험분석`,
+
+    `${shortName} 보장분석`,
+    `${fullName} 보장분석`,
+
+    `${regionName} ${shortName} 보험점검`,
+    `${regionName} ${fullName} 보험점검`,
+
+    `${regionName} ${shortName} 보험상담`,
+    `${regionName} ${fullName} 보험상담`,
+
+    `${regionName} ${shortName} 보험분석`,
+    `${regionName} ${fullName} 보험분석`,
+  ];
+}
+
+
+/* =====================================
+   지역 SEO 정보 자동 생성
+===================================== */
+
+export function getDistrictSeoData(
+  districtName: string,
+  regionName: string
+) {
+  const {
+    shortName,
+    fullName,
+  } = getDistrictSearchNames(
+    districtName
+  );
+
+  const searchTerms =
+    getDistrictSearchTerms(
+      districtName,
+      regionName
+    );
+
+  return {
+    shortName,
+    fullName,
+
+    searchTerms,
+
+    title:
+      `${shortName} 보험점검 | 보험 보장분석 상담`,
+
+    description:
+      `${shortName} 보험점검 및 보험 보장분석 안내. ` +
+      `가입한 보험의 보장내용과 보험료, 중복보장, 부족한 보장을 확인해보세요.`,
+
+    heading:
+      `${shortName} 보험점검`,
+
+    subHeading:
+      `${shortName} 보험 보장분석 및 보험상담`,
+
+    consultationTitle:
+      `${shortName} 보험점검 상담`,
+
+    regionText:
+      `${regionName} ${shortName}`,
+  };
+}
