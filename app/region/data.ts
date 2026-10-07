@@ -1,9 +1,16 @@
 export const PHONE = "01086462117";
+
 export const PHONE_DISPLAY = "010-8646-2117";
+
 export const PHONE_LINK = `tel:${PHONE}`;
 
 export const SITE_URL =
   "https://bohumreport.com";
+
+
+/* =====================================
+   지역 데이터
+===================================== */
 
 export const REGION_DATA = {
   seoul: {
@@ -139,84 +146,65 @@ export const REGION_DATA = {
   },
 } as const;
 
+
 export type RegionSlug =
   keyof typeof REGION_DATA;
 
 
 /* =====================================
-   지역명 검색어 자동 생성
+   지역명 자동 변환
 ===================================== */
 
-/**
- * 지역명에서 사람들이 실제 검색할 수 있는
- * 자연스러운 지역명 형태를 자동으로 생성합니다.
- *
- * 예:
- * 영등포구
- * → 영등포
- * → 영등포구
- *
- * 수원시
- * → 수원
- * → 수원시
- *
- * 강화군
- * → 강화
- * → 강화군
- */
-export function getDistrictSearchNames(
+/*
+  강남구 → 강남
+  영등포구 → 영등포
+  수원시 → 수원
+  강화군 → 강화
+
+  단, 실제 페이지 URL과 원래 지역명은
+  절대로 변경하지 않습니다.
+*/
+export function getShortDistrictName(
   districtName: string
 ) {
-  const shortName =
+  if (
     districtName.endsWith("구") ||
     districtName.endsWith("시") ||
     districtName.endsWith("군")
-      ? districtName.slice(0, -1)
-      : districtName;
+  ) {
+    return districtName.slice(0, -1);
+  }
 
-  return {
-    shortName,
-    fullName: districtName,
-  };
+  return districtName;
 }
 
 
 /* =====================================
-   지역 SEO 검색어 자동 생성
+   지역 검색어 자동 생성
 ===================================== */
 
 export function getDistrictSearchTerms(
   districtName: string,
   regionName: string
 ) {
-  const {
-    shortName,
-    fullName,
-  } = getDistrictSearchNames(
-    districtName
-  );
+  const shortName =
+    getShortDistrictName(districtName);
 
   return [
     `${shortName} 보험점검`,
-    `${fullName} 보험점검`,
+    `${districtName} 보험점검`,
 
     `${shortName} 보험상담`,
-    `${fullName} 보험상담`,
+    `${districtName} 보험상담`,
 
     `${shortName} 보험분석`,
-    `${fullName} 보험분석`,
+    `${districtName} 보험분석`,
 
     `${shortName} 보장분석`,
-    `${fullName} 보장분석`,
+    `${districtName} 보장분석`,
 
     `${regionName} ${shortName} 보험점검`,
-    `${regionName} ${fullName} 보험점검`,
-
-    `${regionName} ${shortName} 보험상담`,
-    `${regionName} ${fullName} 보험상담`,
-
-    `${regionName} ${shortName} 보험분석`,
-    `${regionName} ${fullName} 보험분석`,
+    `${regionName} ${districtName} 보험점검`,
   ];
 }
 
@@ -229,31 +217,26 @@ export function getDistrictSeoData(
   districtName: string,
   regionName: string
 ) {
-  const {
-    shortName,
-    fullName,
-  } = getDistrictSearchNames(
-    districtName
-  );
-
-  const searchTerms =
-    getDistrictSearchTerms(
-      districtName,
-      regionName
-    );
+  const shortName =
+    getShortDistrictName(districtName);
 
   return {
     shortName,
-    fullName,
 
-    searchTerms,
+    fullName: districtName,
+
+    searchTerms:
+      getDistrictSearchTerms(
+        districtName,
+        regionName
+      ),
 
     title:
       `${shortName} 보험점검 | 보험 보장분석 상담`,
 
     description:
       `${shortName} 보험점검 및 보험 보장분석 안내. ` +
-      `가입한 보험의 보장내용과 보험료, 중복보장, 부족한 보장을 확인해보세요.`,
+      `가입한 보험의 보장내용과 보험료, 중복보장, 부족할 수 있는 보장을 확인해보세요.`,
 
     heading:
       `${shortName} 보험점검`,
