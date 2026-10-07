@@ -1,13 +1,15 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL = "https://bohumreport.com";
+import { SITE_URL } from "./region/data";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-    },
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+      },
+    ],
 
     sitemap: `${SITE_URL}/sitemap.xml`,
 
