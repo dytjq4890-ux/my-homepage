@@ -180,6 +180,63 @@ export function getShortDistrictName(
 
 
 /* =====================================
+   지역명 정규화
+===================================== */
+
+/*
+  검색할 때
+
+  부천   → 부천
+  부천시 → 부천
+
+  수원   → 수원
+  수원시 → 수원
+
+  영등포   → 영등포
+  영등포구 → 영등포
+
+  처럼 동일하게 인식하도록 합니다.
+*/
+export function normalizeDistrictName(
+  districtName: string
+) {
+  return districtName
+    .trim()
+    .replace(/특별시$/g, "")
+    .replace(/광역시$/g, "")
+    .replace(/특별자치시$/g, "")
+    .replace(/특별자치도$/g, "")
+    .replace(/자치도$/g, "")
+    .replace(/도$/g, "")
+    .replace(/시$/g, "")
+    .replace(/군$/g, "")
+    .replace(/구$/g, "");
+}
+
+
+/* =====================================
+   지역명 일치 여부 확인
+===================================== */
+
+/*
+  부천 ↔ 부천시
+  수원 ↔ 수원시
+  영등포 ↔ 영등포구
+
+  모두 같은 지역으로 판단합니다.
+*/
+export function isSameDistrict(
+  districtA: string,
+  districtB: string
+) {
+  return (
+    normalizeDistrictName(districtA) ===
+    normalizeDistrictName(districtB)
+  );
+}
+
+
+/* =====================================
    지역 검색어 자동 생성
 ===================================== */
 
@@ -191,17 +248,29 @@ export function getDistrictSearchTerms(
     getShortDistrictName(districtName);
 
   return [
+    /* 지역명 */
+    shortName,
+    districtName,
+
+    /* 보험점검 */
     `${shortName} 보험점검`,
     `${districtName} 보험점검`,
 
+    /* 보험상담 */
     `${shortName} 보험상담`,
     `${districtName} 보험상담`,
 
+    /* 보험분석 */
     `${shortName} 보험분석`,
     `${districtName} 보험분석`,
 
+    /* 보장분석 */
     `${shortName} 보장분석`,
     `${districtName} 보장분석`,
+
+    /* 광역지역 + 지역 */
+    `${regionName} ${shortName}`,
+    `${regionName} ${districtName}`,
 
     `${regionName} ${shortName} 보험점검`,
     `${regionName} ${districtName} 보험점검`,
