@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 
 import {
@@ -642,7 +643,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 안내문 */}
+      {/* 기존 보험 안내문 */}
 
       <section
         style={{
@@ -675,35 +676,230 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 하단 */}
+      {/* 하단 운영 및 광고 안내 */}
 
       <footer
         style={{
-          padding: "38px 20px",
-          background: "#111827",
+          background: "#07172d",
           color: "#d1d5db",
-          textAlign: "center",
-          lineHeight: 1.9,
-          fontSize: "14px",
+          padding: "45px 20px 25px",
+          fontSize: "13px",
+          lineHeight: 2,
         }}
       >
-        <strong
+        <div
           style={{
-            color: "#ffffff",
-            fontSize: "17px",
+            maxWidth: "1100px",
+            margin: "0 auto",
           }}
         >
-          보험점검
-        </strong>
+          {/* 브랜드 */}
 
-        <br />
+          <div
+            style={{
+              marginBottom: "28px",
+            }}
+          >
+            <div
+              style={{
+                color: "#ffffff",
+                fontSize: "22px",
+                fontWeight: 900,
+                marginBottom: "8px",
+              }}
+            >
+              보험점검센터
+            </div>
 
-        서울 · 경기 · 인천 ·
-        충남 · 충북 보험 보장분석 안내
+            <p
+              style={{
+                margin: 0,
+                color: "#9ca3af",
+              }}
+            >
+              보험 보장분석 및 상담 안내 서비스
+            </p>
+          </div>
 
-        <br />
+          {/* 운영 정보 */}
 
-        상담전화 {PHONE_DISPLAY}
+          <div
+            style={{
+              borderTop: "1px solid #334155",
+              paddingTop: "25px",
+              marginBottom: "25px",
+            }}
+          >
+            <h3
+              style={{
+                color: "#ffffff",
+                fontSize: "15px",
+                margin: "0 0 12px",
+                fontWeight: 800,
+              }}
+            >
+              운영 및 사업자 정보
+            </h3>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns:
+                  "repeat(auto-fit,minmax(260px,1fr))",
+                gap: "5px 25px",
+              }}
+            >
+              <p style={{ margin: 0 }}>
+                운영 회사 : 유퍼스트보험마케팅
+              </p>
+
+              <p style={{ margin: 0 }}>
+                협회 등록번호 : 제2001048024호
+              </p>
+
+              <p style={{ margin: 0 }}>
+                보험설계사 : 신요섭
+              </p>
+
+              <p style={{ margin: 0 }}>
+                설계사 협회 등록번호 : 20260420004094
+              </p>
+
+              <p
+                style={{
+                  margin: 0,
+                  gridColumn: "1 / -1",
+                }}
+              >
+                주소 : 서울특별시 중구 소월로 10
+                (남대문로5가), 단암빌딩 6층
+              </p>
+
+              <p
+                style={{
+                  margin: 0,
+                  gridColumn: "1 / -1",
+                }}
+              >
+                상담전화 : {PHONE_DISPLAY}
+              </p>
+            </div>
+          </div>
+
+          {/* 서비스 안내 */}
+
+          <div
+            style={{
+              borderTop: "1px solid #334155",
+              paddingTop: "25px",
+              marginBottom: "25px",
+            }}
+          >
+            <h3
+              style={{
+                color: "#ffffff",
+                fontSize: "15px",
+                margin: "0 0 12px",
+                fontWeight: 800,
+              }}
+            >
+              서비스 안내
+            </h3>
+
+            <p
+              style={{
+                margin: 0,
+                color: "#d1d5db",
+              }}
+            >
+              본 사이트는 보험 보장분석 및 상담 서비스를
+              안내하는 민간 보험상담 사이트입니다.
+              보험상품의 가입 여부 및 보험금 지급 여부는
+              해당 보험회사의 심사 기준에 따라 결정됩니다.
+            </p>
+
+            <p
+              style={{
+                margin: "10px 0 0",
+                color: "#9ca3af",
+              }}
+            >
+              금융감독원 및 정부기관과는 무관한
+              민간 보험상담 서비스입니다.
+            </p>
+          </div>
+
+          {/* 광고 심의 안내 */}
+
+          <div
+            style={{
+              border: "1px solid #334155",
+              borderRadius: "14px",
+              padding: "20px",
+              background: "rgba(255,255,255,0.04)",
+              marginBottom: "25px",
+            }}
+          >
+            <h3
+              style={{
+                color: "#ffffff",
+                fontSize: "15px",
+                margin: "0 0 12px",
+                fontWeight: 800,
+              }}
+            >
+              광고 심의 안내
+            </h3>
+
+            <p
+              style={{
+                margin: 0,
+                color: "#d1d5db",
+              }}
+            >
+              본 광고는 광고심의기준을 준수하였으며,
+              유효기간은 심의일로부터 1년입니다.
+            </p>
+
+            <p
+              style={{
+                color: "#ffffff",
+                fontSize: "14px",
+                fontWeight: 800,
+                margin: "12px 0 0",
+              }}
+            >
+              준법감시인 심의필 제2611011호
+            </p>
+
+            <p
+              style={{
+                color: "#9ca3af",
+                fontSize: "12px",
+                margin: "2px 0 0",
+              }}
+            >
+              (2026.11.04 ~ 2027.11.03)
+            </p>
+          </div>
+
+          {/* 저작권 */}
+
+          <div
+            style={{
+              borderTop: "1px solid #334155",
+              paddingTop: "20px",
+              textAlign: "center",
+              color: "#64748b",
+              fontSize: "12px",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              © {new Date().getFullYear()} 보험점검센터.
+              All rights reserved.
+            </p>
+          </div>
+        </div>
       </footer>
     </main>
   );
