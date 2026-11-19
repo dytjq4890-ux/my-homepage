@@ -7,7 +7,7 @@ import {
   PHONE_DISPLAY,
   PHONE_LINK,
   REGION_DATA,
-  RegionSlug,
+  type RegionSlug,
   SITE_URL,
   getDistrictSeoData,
 } from "../../data";
@@ -25,6 +25,8 @@ type Props = {
 /* =====================================
    모든 지역 상세페이지 자동 생성
 ===================================== */
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return Object.entries(REGION_DATA).flatMap(
@@ -47,8 +49,18 @@ export async function generateMetadata({
 }: Props): Promise<Metadata> {
   const { region, district } = await params;
 
-  if (!(region in REGION_DATA)) {
-    return {};
+  const seo = getDistrictSeoData(
+    region,
+    district
+  );
+
+  if (!seo) {
+    return {
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
   }
 
   const regionData =
@@ -57,16 +69,9 @@ export async function generateMetadata({
   const districts =
     regionData.districts as Record<string, string>;
 
-  if (!(district in districts)) {
-    return {};
-  }
-
   const districtName = districts[district];
 
-  const seo = getDistrictSeoData(
-    districtName,
-    regionData.name
-  );
+  const shortName = districtName;
 
   const pageUrl =
     `${SITE_URL}/region/${region}/${district}`;
@@ -79,17 +84,17 @@ export async function generateMetadata({
     description: seo.description,
 
     keywords: [
-      `${seo.shortName} 보험점검`,
+      `${shortName} 보험점검`,
       `${districtName} 보험점검`,
-      `${seo.shortName} 보험상담`,
+      `${shortName} 보험상담`,
       `${districtName} 보험상담`,
-      `${seo.shortName} 보험분석`,
+      `${shortName} 보험분석`,
       `${districtName} 보험분석`,
-      `${seo.shortName} 보장분석`,
+      `${shortName} 보장분석`,
       `${districtName} 보장분석`,
-      `${seo.shortName} 보험료점검`,
+      `${shortName} 보험료점검`,
       `${districtName} 보험료점검`,
-      `${regionData.name} ${seo.shortName} 보험점검`,
+      `${regionData.name} ${shortName} 보험점검`,
       `${regionData.name} ${districtName} 보험점검`,
       "보험점검",
       "보험상담",
@@ -148,12 +153,15 @@ export default async function DistrictPage({
   /* SEO 정보 */
 
   const seo = getDistrictSeoData(
-    districtName,
-    regionData.name
+    region,
+    district
   );
 
-  const pageUrl =
-    `${SITE_URL}/region/${region}/${district}`;
+  if (!seo) {
+    notFound();
+  }
+
+  const shortName = districtName;
 
   return (
     <main
@@ -251,7 +259,7 @@ export default async function DistrictPage({
               letterSpacing: "-1.5px",
             }}
           >
-            {seo.shortName} 보험점검
+            {shortName} 보험점검
           </h1>
 
           <p
@@ -262,8 +270,7 @@ export default async function DistrictPage({
               opacity: 0.95,
             }}
           >
-            {seo.shortName} 보험 보장분석 및
-            {" "}
+            {shortName} 보험 보장분석 및{" "}
             {districtName} 보험상담 안내
           </p>
 
@@ -337,7 +344,7 @@ export default async function DistrictPage({
               lineHeight: 1.4,
             }}
           >
-            {seo.shortName} 보험점검 안내
+            {shortName} 보험점검 안내
           </h2>
 
           <p
@@ -555,7 +562,7 @@ export default async function DistrictPage({
               margin: "12px 0",
             }}
           >
-            {seo.shortName} 보험점검 상담
+            {shortName} 보험점검 상담
           </h2>
 
           <p
@@ -639,19 +646,11 @@ export default async function DistrictPage({
             보험점검센터
           </strong>
 
-          <p
-            style={{
-              margin: "8px 0",
-            }}
-          >
+          <p style={{ margin: "8px 0" }}>
             {regionData.name} {districtName} 보험 보장분석 안내
           </p>
 
-          <p
-            style={{
-              margin: "5px 0",
-            }}
-          >
+          <p style={{ margin: "5px 0" }}>
             상담전화 {PHONE_DISPLAY}
           </p>
 
