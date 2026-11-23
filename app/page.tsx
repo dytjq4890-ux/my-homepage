@@ -13,57 +13,33 @@ const PROFILE_IMAGE =
   "/IMG_1221.png";
 
 const regions = [
-  {
-    slug: "seoul",
-    name: "서울",
-    desc: "서울 25개 구",
-  },
-  {
-    slug: "gyeonggi",
-    name: "경기",
-    desc: "경기도 시·군",
-  },
-  {
-    slug: "incheon",
-    name: "인천",
-    desc: "인천 구·군",
-  },
-  {
-    slug: "chungnam",
-    name: "충남",
-    desc: "충청남도 시·군",
-  },
-  {
-    slug: "chungbuk",
-    name: "충북",
-    desc: "충청북도 시·군",
-  },
+  { slug: "seoul", name: "서울", desc: "서울 25개 구" },
+  { slug: "gyeonggi", name: "경기", desc: "경기도 시·군" },
+  { slug: "incheon", name: "인천", desc: "인천 구·군" },
+  { slug: "chungnam", name: "충남", desc: "충청남도 시·군" },
+  { slug: "chungbuk", name: "충북", desc: "충청북도 시·군" },
 ];
 
 const checkItems = [
   {
     number: "01",
     title: "보장내용 확인",
-    desc:
-      "현재 가입한 보험에서 어떤 보장을 받고 있는지 확인합니다.",
+    desc: "현재 가입한 보험에서 어떤 보장을 받고 있는지 확인합니다.",
   },
   {
     number: "02",
     title: "중복보장 점검",
-    desc:
-      "비슷한 보장이 여러 보험에 겹쳐 있는지 확인합니다.",
+    desc: "비슷한 보장이 여러 보험에 겹쳐 있는지 확인합니다.",
   },
   {
     number: "03",
     title: "부족한 보장 확인",
-    desc:
-      "현재 계약에서 부족할 수 있는 보장 항목을 확인합니다.",
+    desc: "현재 계약에서 부족할 수 있는 보장 항목을 확인합니다.",
   },
   {
     number: "04",
     title: "보험료 점검",
-    desc:
-      "월 보험료와 보장내용을 함께 확인할 수 있습니다.",
+    desc: "월 보험료와 보장내용을 함께 확인할 수 있습니다.",
   },
 ];
 
@@ -76,19 +52,14 @@ export default function Home() {
         color: "#111827",
       }}
     >
-      {/* 상단 */}
-
       <header
         style={{
           position: "sticky",
           top: 0,
           zIndex: 50,
-          background:
-            "rgba(255,255,255,0.96)",
-          borderBottom:
-            "1px solid #e5e7eb",
-          backdropFilter:
-            "blur(10px)",
+          background: "rgba(255,255,255,0.96)",
+          borderBottom: "1px solid #e5e7eb",
+          backdropFilter: "blur(10px)",
         }}
       >
         <div
@@ -97,8 +68,7 @@ export default function Home() {
             margin: "0 auto",
             padding: "15px 20px",
             display: "flex",
-            justifyContent:
-              "space-between",
+            justifyContent: "space-between",
             alignItems: "center",
             gap: "10px",
           }}
@@ -115,12 +85,7 @@ export default function Home() {
             보험점검
           </Link>
 
-          <div
-            style={{
-              display: "flex",
-              gap: "8px",
-            }}
-          >
+          <div style={{ display: "flex", gap: "8px" }}>
             <a
               href={KAKAO_URL}
               target="_blank"
@@ -156,13 +121,10 @@ export default function Home() {
         </div>
       </header>
 
-      {/* 메인 히어로 */}
-
       <section
         style={{
           padding: "85px 20px",
-          background:
-            "linear-gradient(135deg,#1d4ed8,#2563eb,#3b82f6)",
+          background: "linear-gradient(135deg,#1d4ed8,#2563eb,#3b82f6)",
           color: "#ffffff",
         }}
       >
@@ -171,14 +133,11 @@ export default function Home() {
             maxWidth: "1100px",
             margin: "0 auto",
             display: "grid",
-            gridTemplateColumns:
-              "repeat(auto-fit,minmax(290px,1fr))",
+            gridTemplateColumns: "repeat(auto-fit,minmax(290px,1fr))",
             gap: "45px",
             alignItems: "center",
           }}
         >
-          {/* 왼쪽 */}
-
           <div>
             <div
               style={{
@@ -186,10 +145,8 @@ export default function Home() {
                 padding: "8px 15px",
                 marginBottom: "18px",
                 borderRadius: "999px",
-                background:
-                  "rgba(255,255,255,0.15)",
-                border:
-                  "1px solid rgba(255,255,255,0.2)",
+                background: "rgba(255,255,255,0.15)",
+                border: "1px solid rgba(255,255,255,0.2)",
                 fontWeight: 800,
                 fontSize: "14px",
               }}
@@ -200,8 +157,7 @@ export default function Home() {
             <h1
               style={{
                 margin: "0 0 20px",
-                fontSize:
-                  "clamp(42px,7vw,66px)",
+                fontSize: "clamp(42px,7vw,66px)",
                 lineHeight: 1.15,
                 letterSpacing: "-2px",
               }}
@@ -266,19 +222,14 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 오른쪽 프로필 */}
-
           <div
             style={{
-              background:
-                "rgba(255,255,255,0.12)",
-              border:
-                "1px solid rgba(255,255,255,0.2)",
+              background: "rgba(255,255,255,0.12)",
+              border: "1px solid rgba(255,255,255,0.2)",
               borderRadius: "28px",
               padding: "26px",
               textAlign: "center",
-              boxShadow:
-                "0 18px 50px rgba(0,0,0,0.15)",
+              boxShadow: "0 18px 50px rgba(0,0,0,0.15)",
             }}
           >
             <div
@@ -288,8 +239,7 @@ export default function Home() {
                 margin: "0 auto 20px",
                 borderRadius: "50%",
                 overflow: "hidden",
-                border:
-                  "5px solid #ffffff",
+                border: "5px solid #ffffff",
                 background: "#ffffff",
               }}
             >
@@ -300,8 +250,7 @@ export default function Home() {
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
-                  objectPosition:
-                    "center top",
+                  objectPosition: "center top",
                 }}
               />
             </div>
@@ -365,8 +314,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 점검 항목 */}
-
       <section
         style={{
           maxWidth: "1100px",
@@ -374,46 +321,24 @@ export default function Home() {
           padding: "75px 20px",
         }}
       >
-        <div
-          style={{
-            textAlign: "center",
-            marginBottom: "38px",
-          }}
-        >
-          <div
-            style={{
-              color: "#2563eb",
-              fontWeight: 900,
-              fontSize: "14px",
-            }}
-          >
+        <div style={{ textAlign: "center", marginBottom: "38px" }}>
+          <div style={{ color: "#2563eb", fontWeight: 900, fontSize: "14px" }}>
             INSURANCE CHECK
           </div>
 
-          <h2
-            style={{
-              fontSize: "34px",
-              margin: "10px 0",
-            }}
-          >
+          <h2 style={{ fontSize: "34px", margin: "10px 0" }}>
             보험점검 항목
           </h2>
 
-          <p
-            style={{
-              color: "#6b7280",
-            }}
-          >
-            현재 가입한 보험을
-            기준으로 확인합니다.
+          <p style={{ color: "#6b7280" }}>
+            현재 가입한 보험을 기준으로 확인합니다.
           </p>
         </div>
 
         <div
           style={{
             display: "grid",
-            gridTemplateColumns:
-              "repeat(auto-fit,minmax(220px,1fr))",
+            gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))",
             gap: "18px",
           }}
         >
@@ -423,11 +348,9 @@ export default function Home() {
               style={{
                 padding: "28px",
                 background: "#ffffff",
-                border:
-                  "1px solid #e5e7eb",
+                border: "1px solid #e5e7eb",
                 borderRadius: "20px",
-                boxShadow:
-                  "0 8px 28px rgba(15,23,42,0.04)",
+                boxShadow: "0 8px 28px rgba(15,23,42,0.04)",
               }}
             >
               <div
@@ -440,16 +363,9 @@ export default function Home() {
                 {item.number}
               </div>
 
-              <h3>
-                {item.title}
-              </h3>
+              <h3>{item.title}</h3>
 
-              <p
-                style={{
-                  color: "#6b7280",
-                  lineHeight: 1.7,
-                }}
-              >
+              <p style={{ color: "#6b7280", lineHeight: 1.7 }}>
                 {item.desc}
               </p>
             </div>
@@ -457,59 +373,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 지역별 */}
-
-      <section
-        style={{
-          background: "#eef4ff",
-          padding: "70px 20px",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: "1100px",
-            margin: "0 auto",
-          }}
-        >
-          <div
-            style={{
-              textAlign: "center",
-              marginBottom: "35px",
-            }}
-          >
-            <div
-              style={{
-                color: "#2563eb",
-                fontWeight: 900,
-              }}
-            >
+      <section style={{ background: "#eef4ff", padding: "70px 20px" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: "35px" }}>
+            <div style={{ color: "#2563eb", fontWeight: 900 }}>
               지역별 보험점검
             </div>
 
-            <h2
-              style={{
-                fontSize: "34px",
-                marginBottom: "10px",
-              }}
-            >
+            <h2 style={{ fontSize: "34px", marginBottom: "10px" }}>
               원하는 지역을 선택하세요
             </h2>
 
-            <p
-              style={{
-                color: "#6b7280",
-              }}
-            >
-              서울 · 경기 · 인천 ·
-              충남 · 충북
+            <p style={{ color: "#6b7280" }}>
+              서울 · 경기 · 인천 · 충남 · 충북
             </p>
           </div>
 
           <div
             style={{
               display: "grid",
-              gridTemplateColumns:
-                "repeat(auto-fit,minmax(180px,1fr))",
+              gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))",
               gap: "15px",
             }}
           >
@@ -521,13 +404,11 @@ export default function Home() {
                   padding: "25px 18px",
                   background: "#ffffff",
                   borderRadius: "18px",
-                  border:
-                    "1px solid #dbeafe",
+                  border: "1px solid #dbeafe",
                   textDecoration: "none",
                   color: "#111827",
                   textAlign: "center",
-                  boxShadow:
-                    "0 6px 18px rgba(37,99,235,0.05)",
+                  boxShadow: "0 6px 18px rgba(37,99,235,0.05)",
                 }}
               >
                 <strong
@@ -540,12 +421,7 @@ export default function Home() {
                   {region.name}
                 </strong>
 
-                <span
-                  style={{
-                    color: "#6b7280",
-                    fontSize: "14px",
-                  }}
-                >
+                <span style={{ color: "#6b7280", fontSize: "14px" }}>
                   {region.desc}
                 </span>
               </Link>
@@ -554,13 +430,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 상담 */}
-
-      <section
-        style={{
-          padding: "70px 20px",
-        }}
-      >
+      <section style={{ padding: "70px 20px" }}>
         <div
           style={{
             maxWidth: "820px",
@@ -572,32 +442,16 @@ export default function Home() {
             border: "1px solid #e5e7eb",
           }}
         >
-          <div
-            style={{
-              color: "#2563eb",
-              fontWeight: 900,
-            }}
-          >
+          <div style={{ color: "#2563eb", fontWeight: 900 }}>
             보험점검 문의
           </div>
 
-          <h2
-            style={{
-              fontSize: "32px",
-              marginBottom: "10px",
-            }}
-          >
+          <h2 style={{ fontSize: "32px", marginBottom: "10px" }}>
             편한 방법으로 상담하세요
           </h2>
 
-          <p
-            style={{
-              color: "#6b7280",
-              marginBottom: "25px",
-            }}
-          >
-            전화 또는 카카오톡으로
-            문의할 수 있습니다.
+          <p style={{ color: "#6b7280", marginBottom: "25px" }}>
+            전화 또는 카카오톡으로 문의할 수 있습니다.
           </p>
 
           <div
@@ -643,22 +497,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 기존 보험 안내문 */}
-
       <section
         style={{
           maxWidth: "950px",
           margin: "0 auto",
-          padding:
-            "0 20px 70px",
+          padding: "0 20px 70px",
         }}
       >
         <div
           style={{
             padding: "20px",
             background: "#fff7ed",
-            border:
-              "1px solid #fed7aa",
+            border: "1px solid #fed7aa",
             borderRadius: "16px",
             color: "#7c2d12",
             fontSize: "14px",
@@ -676,8 +526,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 하단 운영 및 광고 안내 */}
-
       <footer
         style={{
           background: "#07172d",
@@ -687,19 +535,8 @@ export default function Home() {
           lineHeight: 2,
         }}
       >
-        <div
-          style={{
-            maxWidth: "1100px",
-            margin: "0 auto",
-          }}
-        >
-          {/* 브랜드 */}
-
-          <div
-            style={{
-              marginBottom: "28px",
-            }}
-          >
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          <div style={{ marginBottom: "28px" }}>
             <div
               style={{
                 color: "#ffffff",
@@ -711,17 +548,10 @@ export default function Home() {
               보험점검센터
             </div>
 
-            <p
-              style={{
-                margin: 0,
-                color: "#9ca3af",
-              }}
-            >
+            <p style={{ margin: 0, color: "#9ca3af" }}>
               보험 보장분석 및 상담 안내 서비스
             </p>
           </div>
-
-          {/* 운영 정보 */}
 
           <div
             style={{
@@ -744,49 +574,25 @@ export default function Home() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns:
-                  "repeat(auto-fit,minmax(260px,1fr))",
+                gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))",
                 gap: "5px 25px",
               }}
             >
-              <p style={{ margin: 0 }}>
-                운영 회사 : 유퍼스트보험마케팅
-              </p>
+              <p style={{ margin: 0 }}>운영 회사 : 유퍼스트보험마케팅</p>
+              <p style={{ margin: 0 }}>협회 등록번호 : 제2001048024호</p>
+              <p style={{ margin: 0 }}>보험설계사 : 신요섭</p>
+              <p style={{ margin: 0 }}>설계사 협회 등록번호 : 20260420004094</p>
 
-              <p style={{ margin: 0 }}>
-                협회 등록번호 : 제2001048024호
-              </p>
-
-              <p style={{ margin: 0 }}>
-                보험설계사 : 신요섭
-              </p>
-
-              <p style={{ margin: 0 }}>
-                설계사 협회 등록번호 : 20260420004094
-              </p>
-
-              <p
-                style={{
-                  margin: 0,
-                  gridColumn: "1 / -1",
-                }}
-              >
+              <p style={{ margin: 0, gridColumn: "1 / -1" }}>
                 주소 : 서울특별시 중구 소월로 10
                 (남대문로5가), 단암빌딩 6층
               </p>
 
-              <p
-                style={{
-                  margin: 0,
-                  gridColumn: "1 / -1",
-                }}
-              >
+              <p style={{ margin: 0, gridColumn: "1 / -1" }}>
                 상담전화 : {PHONE_DISPLAY}
               </p>
             </div>
           </div>
-
-          {/* 서비스 안내 */}
 
           <div
             style={{
@@ -806,30 +612,18 @@ export default function Home() {
               서비스 안내
             </h3>
 
-            <p
-              style={{
-                margin: 0,
-                color: "#d1d5db",
-              }}
-            >
+            <p style={{ margin: 0, color: "#d1d5db" }}>
               본 사이트는 보험 보장분석 및 상담 서비스를
               안내하는 민간 보험상담 사이트입니다.
               보험상품의 가입 여부 및 보험금 지급 여부는
               해당 보험회사의 심사 기준에 따라 결정됩니다.
             </p>
 
-            <p
-              style={{
-                margin: "10px 0 0",
-                color: "#9ca3af",
-              }}
-            >
+            <p style={{ margin: "10px 0 0", color: "#9ca3af" }}>
               금융감독원 및 정부기관과는 무관한
               민간 보험상담 서비스입니다.
             </p>
           </div>
-
-          {/* 광고 심의 안내 */}
 
           <div
             style={{
@@ -851,12 +645,7 @@ export default function Home() {
               광고 심의 안내
             </h3>
 
-            <p
-              style={{
-                margin: 0,
-                color: "#d1d5db",
-              }}
-            >
+            <p style={{ margin: 0, color: "#d1d5db" }}>
               본 광고는 광고심의기준을 준수하였으며,
               유효기간은 심의일로부터 1년입니다.
             </p>
@@ -869,7 +658,7 @@ export default function Home() {
                 margin: "12px 0 0",
               }}
             >
-              준법감시인 심의필 제2611011호
+              준법감시인 심의필 제2611022호
             </p>
 
             <p
@@ -879,11 +668,9 @@ export default function Home() {
                 margin: "2px 0 0",
               }}
             >
-              (2026.11.04 ~ 2027.11.03)
+              (2026.11.23 ~ 2027.11.22)
             </p>
           </div>
-
-          {/* 저작권 */}
 
           <div
             style={{
